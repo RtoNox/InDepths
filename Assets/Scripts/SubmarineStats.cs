@@ -48,4 +48,29 @@ public class SubmarineStats : MonoBehaviour
         // Pressure resistance system
         return vitalityLevel * 50f; // example scaling
     }
+
+    public int UpgradeStat(string stat)
+    {
+        switch (stat.ToLower())
+        {
+            case "damage":
+                damageLevel++;
+                return damageLevel;
+            case "ammo":
+                ammoLevel++;
+                return ammoLevel;
+            case "speed":
+                speedLevel++;
+                return speedLevel;
+            case "vitality":
+                vitalityLevel++;
+                return vitalityLevel;
+            case "oxygen":
+                oxygenLevel++;
+                return oxygenLevel;
+            default:
+                Debug.LogWarning("Invalid stat name: " + stat);
+                return -1;
+        }
+    }
 }

@@ -27,6 +27,7 @@ public class FishSpawner : MonoBehaviour
 
         // More delay when deeper (fish become rarer)
         float depthMultiplier = Mathf.Clamp(depth / 100f, 1f, 5f);
+
         CancelInvoke(nameof(Spawn));
         InvokeRepeating(nameof(Spawn), depthMultiplier, depthMultiplier);
 
