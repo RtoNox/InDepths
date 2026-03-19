@@ -3,11 +3,11 @@ using UnityEngine;
 public class SubmarineStats : MonoBehaviour
 {
     [Header("Levels")]
-    public int damageLevel = 1;
-    public int ammoLevel = 1;
-    public int speedLevel = 1;
-    public int vitalityLevel = 1;
-    public int oxygenLevel = 1;
+    public int damageLevel = 0;
+    public int ammoLevel = 0;
+    public int speedLevel = 0;
+    public int vitalityLevel = 0;
+    public int oxygenLevel = 0;
 
     [Header("Base Values")]
     public int baseDamage = 20;
