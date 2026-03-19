@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4267086988838618773}
   - component: {fileID: 7135872858943666850}
+  - component: {fileID: 5668598261195215003}
+  - component: {fileID: -485873491006082142}
+  - component: {fileID: -339442312562928432}
+  - component: {fileID: 9203448944132450054}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,3 +88,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5668598261195215003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017187759749167951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b912618fce3cb474ea7db35fd6b36860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  acceleration: 5
+  drag: 4
+--- !u!114 &-485873491006082142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017187759749167951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca60c5aa82d629d4685e79ab43d56e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  damageRate: 5
+--- !u!114 &-339442312562928432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017187759749167951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd35c614185ea4585abcee17b4e11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentOxygen: 0
+  drainRate: 5
+--- !u!114 &9203448944132450054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017187759749167951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc5ad2d459ef2e40be7d9655ae9dee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageLevel: 0
+  ammoLevel: 0
+  speedLevel: 0
+  vitalityLevel: 0
+  oxygenLevel: 0
+  armStrengthLevel: 0
+  flashlightStrengthLevel: 0
+  flashlightBatteryLevel: 0
+  storageLevel: 0
+  baseDamage: 20
+  baseAmmo: 10
+  baseSpeed: 5
+  baseHealth: 100
+  baseOxygen: 100
+  baseFlashlightBattery: 100
+  baseStorage: 0
