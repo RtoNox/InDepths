@@ -8,6 +8,9 @@ public class SubmarineStats : MonoBehaviour
     public int speedLevel = 0;
     public int vitalityLevel = 0;
     public int oxygenLevel = 0;
+    public int armStrengthLevel = 0;
+    public int flashlightStrengthLevel = 0;
+    public int flashlightBatteryLevel = 0;
 
     [Header("Base Values")]
     public int baseDamage = 20;
@@ -15,6 +18,7 @@ public class SubmarineStats : MonoBehaviour
     public float baseSpeed = 5f;
     public int baseHealth = 100;
     public float baseOxygen = 100f;
+    public float baseFlashlightBattery = 100f;
 
     // === CALCULATED STATS ===
 
@@ -47,6 +51,21 @@ public class SubmarineStats : MonoBehaviour
     {
         // Pressure resistance system
         return vitalityLevel * 50f; // example scaling
+    }
+
+    public float GetArmStrength()
+    {
+        return armStrengthLevel;
+    }
+
+    public float GetFlashlightStrength()
+    {
+        return flashlightStrengthLevel;
+    }
+
+    public float GetFlashlightBatteryCapacity()
+    {
+        return baseFlashlightBattery + (flashlightBatteryLevel * 20f);
     }
 
     public int UpgradeStat(string stat)
