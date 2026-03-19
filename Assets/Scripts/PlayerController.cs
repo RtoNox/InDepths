@@ -21,9 +21,14 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorld.z = 0f;
+
+        Vector2 direction = (mouseWorld - transform.position).normalized;
+
+        if (direction.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
-        else if (Input.GetAxisRaw("Horizontal") < 0)
+        else if (direction.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
 
         movement = movement.normalized;
