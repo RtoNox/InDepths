@@ -10,8 +10,8 @@ public class SubmarineStats : MonoBehaviour
     public int oxygenLevel = 1;
 
     [Header("Base Values")]
-    public int baseDamage = 2;
-    public int baseAmmo = 3;
+    public int baseDamage = 20;
+    public int baseAmmo = 10;
     public float baseSpeed = 5f;
     public int baseHealth = 100;
     public float baseOxygen = 100f;
