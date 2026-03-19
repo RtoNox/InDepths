@@ -25,4 +25,9 @@ public class OxygenSystem : MonoBehaviour
             health.TakeDamage(1); // suffocation damage
         }
     }
+
+    public void ResetOxygen()
+    {
+        currentOxygen = stats.GetMaxOxygen();
+    }
 }

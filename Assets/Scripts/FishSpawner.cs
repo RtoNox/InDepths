@@ -4,10 +4,10 @@ public class FishSpawner : MonoBehaviour
 {
     public GameObject[] fishPrefabs;
 
-    public Vector2 minBounds;
-    public Vector2 maxBounds;
+    public float minBounds;
+    public float maxBounds;
 
-    public float baseSpawnInterval = 2f;
+    public float spawnInterval = 2f;
     public int maxCount = 20;
 
     public Transform player;
@@ -16,7 +16,7 @@ public class FishSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(Spawn), 1f, baseSpawnInterval);
+        InvokeRepeating(nameof(Spawn), 1f, spawnInterval);
     }
 
     void Spawn()
@@ -27,37 +27,61 @@ public class FishSpawner : MonoBehaviour
 
         // More delay when deeper (fish become rarer)
         float depthMultiplier = Mathf.Clamp(depth / 100f, 1f, 5f);
+
         CancelInvoke(nameof(Spawn));
         InvokeRepeating(nameof(Spawn), depthMultiplier, depthMultiplier);
 
-        GameObject prefab = GetValidPrefab(depth);
+        GameObject prefab = GetWeightedPrefab(fishPrefabs, depth);
         if (prefab == null) return;
 
-        Vector2 pos = GetRandomPosition();
+        Vector2 pos = GetSafeSpawnPosition(player, minBounds, maxBounds);
 
         GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
         Register(obj);
     }
 
-    GameObject GetValidPrefab(float depth)
+    GameObject GetWeightedPrefab(GameObject[] prefabs, float depth)
     {
-        foreach (var prefab in fishPrefabs)
-        {
-            Spawnable s = prefab.GetComponent<Spawnable>();
+        float totalWeight = 0f;
 
-            if (s != null && depth >= s.minDepth && depth <= s.maxDepth)
-                return prefab;
+        float[] weights = new float[prefabs.Length];
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            Spawnable s = prefabs[i].GetComponent<Spawnable>();
+
+            if (s == null) continue;
+
+            float w = s.GetWeight(depth);
+            weights[i] = w;
+            totalWeight += w;
+        }
+
+        if (totalWeight <= 0f) return null;
+
+        float random = Random.Range(0, totalWeight);
+
+        float cumulative = 0f;
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            cumulative += weights[i];
+
+            if (random <= cumulative)
+            {
+                return prefabs[i];
+            }
         }
 
         return null;
     }
 
-    Vector2 GetRandomPosition()
+    Vector2 GetSafeSpawnPosition(Transform player, float minDistance, float maxDistance)
     {
-        return new Vector2(
-            Random.Range(minBounds.x, maxBounds.x),
-            Random.Range(minBounds.y, maxBounds.y)
-        );
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        float distance = Random.Range(minDistance, maxDistance);
+
+        return (Vector2)player.position + dir * distance;
     }
 
     void Register(GameObject obj)

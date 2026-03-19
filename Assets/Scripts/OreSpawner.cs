@@ -4,8 +4,8 @@ public class OreSpawner : MonoBehaviour
 {
     public GameObject[] orePrefabs;
 
-    public Vector2 minBounds;
-    public Vector2 maxBounds;
+    public float minBounds;
+    public float maxBounds;
 
     public float spawnInterval = 5f;
     public int maxCount = 15;
@@ -25,39 +25,57 @@ public class OreSpawner : MonoBehaviour
 
         float depth = Mathf.Abs(player.position.y);
 
-        GameObject prefab = GetValidPrefab(depth);
+        GameObject prefab = GetWeightedPrefab(orePrefabs, depth);
         if (prefab == null) return;
 
-        Vector2 pos = GetRandomPosition();
+        Vector2 pos = GetSafeSpawnPosition(player, minBounds, maxBounds);
 
         GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
         Register(obj);
     }
 
-    GameObject GetValidPrefab(float depth)
+    GameObject GetWeightedPrefab(GameObject[] prefabs, float depth)
     {
-        // Prefer deeper ores
-        GameObject selected = null;
+        float totalWeight = 0f;
 
-        foreach (var prefab in orePrefabs)
+        float[] weights = new float[prefabs.Length];
+
+        for (int i = 0; i < prefabs.Length; i++)
         {
-            Spawnable s = prefab.GetComponent<Spawnable>();
+            Spawnable s = prefabs[i].GetComponent<Spawnable>();
 
-            if (s != null && depth >= s.minDepth && depth <= s.maxDepth)
+            if (s == null) continue;
+
+            float w = s.GetWeight(depth);
+            weights[i] = w;
+            totalWeight += w;
+        }
+
+        if (totalWeight <= 0f) return null;
+
+        float random = Random.Range(0, totalWeight);
+
+        float cumulative = 0f;
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            cumulative += weights[i];
+
+            if (random <= cumulative)
             {
-                selected = prefab;
+                return prefabs[i];
             }
         }
 
-        return selected;
+        return null;
     }
 
-    Vector2 GetRandomPosition()
+    Vector2 GetSafeSpawnPosition(Transform player, float minDistance, float maxDistance)
     {
-        return new Vector2(
-            Random.Range(minBounds.x, maxBounds.x),
-            Random.Range(minBounds.y, maxBounds.y)
-        );
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        float distance = Random.Range(minDistance, maxDistance);
+
+        return (Vector2)player.position + dir * distance;
     }
 
     void Register(GameObject obj)
