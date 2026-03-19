@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -7,13 +6,13 @@ public class CameraController : MonoBehaviour
     public Transform player;
 
     [Header("Camera Settings")]
-    public float maxDistance = 2f;
+    public float maxDistance = 3f;
 
-    [Header("Smooth Settings")]
-    public float baseSmoothSpeed = 1f;
-    public float maxSmoothSpeed = 3f;
+    [Header("Mouse Smooth")]
+    public float offsetSmoothSpeed = 1f;
 
     private Camera cam;
+    private Vector2 currentOffset;
 
     void Awake()
     {
@@ -24,24 +23,27 @@ public class CameraController : MonoBehaviour
     {
         if (player == null) return;
 
-        // Mouse position in world
+        // Mouse world position
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
-        Vector2 direction = mouseWorld - player.position;
-        float distance = direction.magnitude;
+        // Direction from player mouse
+        Vector2 targetOffset = mouseWorld - player.position;
 
         // Clamp to circular boundary
-        Vector2 clampedOffset = Vector2.ClampMagnitude(direction, maxDistance);
+        targetOffset = Vector2.ClampMagnitude(targetOffset, maxDistance);
 
-        // Final camera position
-        Vector3 targetPosition = player.position + (Vector3)clampedOffset;
-        targetPosition.z = -10f; // keep camera at correct depth
+        // Smooth ONLY the offset
+        currentOffset = Vector2.Lerp(
+            currentOffset,
+            targetOffset,
+            offsetSmoothSpeed * Time.deltaTime
+        );
 
-        float t = distance / maxDistance;
-        float currentSmoothSpeed = Mathf.Lerp(baseSmoothSpeed, maxSmoothSpeed, t);
+        // Camera position is set to player position
+        Vector3 finalPosition = player.position + (Vector3)currentOffset;
+        finalPosition.z = -10f;
 
-        // Smooth movement
-        transform.position = Vector3.Lerp(transform.position, targetPosition, currentSmoothSpeed * Time.deltaTime);
+        transform.position = finalPosition;
     }
 }

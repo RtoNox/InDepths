@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8589e598e74f89c4890ccace69e310ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDepth: 1
+  minDepth: -50
   maxDepth: 50
   baseWeight: 1
   idealDepth: 0

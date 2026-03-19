@@ -212,11 +212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -368,9 +368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 653737863}
-  maxDistance: 2
-  baseSmoothSpeed: 1
-  maxSmoothSpeed: 3
+  maxDistance: 1
+  offsetSmoothSpeed: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
