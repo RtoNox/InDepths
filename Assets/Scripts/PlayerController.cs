@@ -21,13 +21,16 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetAxisRaw("Horizontal") > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+
         movement = movement.normalized;
     }
 
     void FixedUpdate()
     {
-        if (rb == null) return;
-
         // Smooth underwater-like movement
         Vector2 targetVelocity = movement * moveSpeed;
         rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, acceleration * Time.fixedDeltaTime);

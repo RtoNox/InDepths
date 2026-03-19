@@ -6,8 +6,6 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public bool destroyOnDeath = false;
-
     void Awake()
     {
         currentHealth = maxHealth;
@@ -16,6 +14,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        Debug.Log(gameObject.name + " took " + amount + " damage! Current health: " + currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -27,15 +26,11 @@ public class Health : MonoBehaviour
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        Debug.Log(gameObject.name + " healed " + amount + " health! Current health: " + currentHealth);
     }
 
     void Die()
     {
         Debug.Log(gameObject.name + " died!");
-
-        if (destroyOnDeath)
-        {
-            Destroy(gameObject);
-        }
     }
 }
