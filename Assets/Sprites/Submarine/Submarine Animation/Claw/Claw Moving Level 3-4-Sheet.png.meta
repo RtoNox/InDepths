@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 34
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36a9b63b24a96642ab1c1a955324a36
+      internalID: -768059897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 34
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615dfcadcb54fc74babb5340d9c37e41
+      internalID: -750401984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 34
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cfab6c4acc7cf4bafe11512bd49200
+      internalID: -536184565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 34
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5efeff031900a648acdb84d39bc58ba
+      internalID: 226476855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 34
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3a136ab52d5d140b458ac79b95fdd2
+      internalID: -459314576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 34
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112162a90e45cdb4abada3716d850792
+      internalID: -1450129647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 34
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc462cc28a1b2eb438678d439be3c9d6
+      internalID: -2012264699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 34
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d184db89452e1534a829fe6902be8cac
+      internalID: -561033913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 34
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f38521b0e82b8249b1006b8e1667560
+      internalID: 1349951021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claw Moving Level 3-4-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 34
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a849451455bf147a90ed6cbb35b02b
+      internalID: -588602671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +316,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Claw Moving Level 3-4-Sheet_0: -768059897
+      Claw Moving Level 3-4-Sheet_1: -750401984
+      Claw Moving Level 3-4-Sheet_2: -536184565
+      Claw Moving Level 3-4-Sheet_3: 226476855
+      Claw Moving Level 3-4-Sheet_4: -459314576
+      Claw Moving Level 3-4-Sheet_5: -1450129647
+      Claw Moving Level 3-4-Sheet_6: -2012264699
+      Claw Moving Level 3-4-Sheet_7: -561033913
+      Claw Moving Level 3-4-Sheet_8: 1349951021
+      Claw Moving Level 3-4-Sheet_9: -588602671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
