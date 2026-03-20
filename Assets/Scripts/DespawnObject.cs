@@ -10,6 +10,14 @@ public class DespawnObject : MonoBehaviour
 
     private float timer;
 
+    void Start()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+    }
+
     void Update()
     {
         if (player == null) return;
