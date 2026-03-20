@@ -84,6 +84,14 @@ public class OreSpawner : MonoBehaviour
 
         Spawnable so = obj.GetComponent<Spawnable>();
         if (so != null)
+        {
             so.onDestroyed += () => currentCount--;
+        }
+
+        DespawnObject ds = obj.GetComponent<DespawnObject>();
+        if (ds != null)
+        {
+            ds.player = player;
+        }
     }
 }
