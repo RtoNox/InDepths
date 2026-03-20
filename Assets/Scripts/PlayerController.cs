@@ -3,6 +3,15 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum PlayerState
+    {
+        ArmCollect,
+        TorpedoShoot,
+        SpeedBoost
+    }
+
+    public PlayerState currentState = PlayerState.SpeedBoost;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
     public float acceleration = 5f;
@@ -27,8 +36,12 @@ public class PlayerController : MonoBehaviour
     private Inventory inventory;
     public Item heldItem;
 
-    [Header("UI")]
+    [Header("Game UI")]
     public TextMeshProUGUI storageText;
+
+    [Header("Shop UI")]
+    private ShopUIController shopUI;
+    private ShopSystem shopSystem;
 
     void Awake()
     {
@@ -61,7 +74,20 @@ public class PlayerController : MonoBehaviour
 
         UpdateStorageUI();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("1"))
+        {
+            currentState = PlayerState.ArmCollect;
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            currentState = PlayerState.TorpedoShoot;
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            currentState = PlayerState.SpeedBoost;
+        }
+
+        if (Input.GetMouseButtonDown(0) && currentState == PlayerState.ArmCollect)
         {
             StartArmAction();
         }
@@ -81,6 +107,15 @@ public class PlayerController : MonoBehaviour
                 isExtending = false;
             }
         }
+
+        if (transform.position.y >= 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.F) && !shopUI.IsOpen())
+            {
+                shopSystem.SellItems(); // SELL FIRST
+                shopUI.OpenShop();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -93,6 +128,19 @@ public class PlayerController : MonoBehaviour
         if (movement.magnitude == 0)
         {
             rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, drag * Time.fixedDeltaTime);
+        }
+
+        // Surface limit: Prevent moving above water
+        if (transform.position.y > 0f)
+        {
+            // Clamp position
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+
+            // Stop upward movement
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
+            }
         }
     }
 

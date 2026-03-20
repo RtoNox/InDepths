@@ -11,6 +11,7 @@ public class OxygenSystem : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<SubmarineStats>();
         health = GetComponent<Health>();
 

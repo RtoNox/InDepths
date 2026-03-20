@@ -72,7 +72,7 @@ public class SubmarineStats : MonoBehaviour
 
     public int GetStorageCapacity()
     {
-        return storageLevel * 5; // +5 inventory slots per level
+        return storageLevel * 10; // +10 inventory slots per level
     }
 
     public int UpgradeStat(string stat)
