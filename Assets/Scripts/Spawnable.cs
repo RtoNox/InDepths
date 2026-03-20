@@ -29,6 +29,32 @@ public class Spawnable : MonoBehaviour
         return weight;
     }
 
+    public Transform player;
+
+    [Header("Despawn Settings")]
+    public float despawnDistance = 40f;
+    public float checkInterval = 1f;
+    private float timer;
+
+    void Update()
+    {
+        if (player == null) return;
+
+        timer += Time.deltaTime;
+
+        if (timer >= checkInterval)
+        {
+            timer = 0f;
+
+            float distance = Vector2.Distance(transform.position, player.position);
+
+            if (distance > despawnDistance)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     public System.Action onDestroyed;
     void OnDestroy()
     {

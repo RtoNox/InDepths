@@ -105,6 +105,9 @@ MonoBehaviour:
   baseWeight: 1
   idealDepth: 5000
   falloff: 50
+  player: {fileID: 0}
+  despawnDistance: 200
+  checkInterval: 1
 --- !u!58 &2989608327009569829
 CircleCollider2D:
   m_ObjectHideFlags: 0

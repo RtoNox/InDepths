@@ -90,6 +90,9 @@ public class MonsterSpawner : MonoBehaviour
 
         Spawnable so = obj.GetComponent<Spawnable>();
         if (so != null)
+        {
+            so.player = player;
             so.onDestroyed += () => currentCount--;
+        }
     }
 }

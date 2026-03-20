@@ -19,6 +19,7 @@ public class SubmarineStats : MonoBehaviour
     public float baseSpeed = 5f;
     public int baseHealth = 100;
     public float baseOxygen = 100f;
+    public float baseSafeDepth = 100f; // depth before pressure damage starts
     public float baseFlashlightBattery = 100f;
     public int baseStorage = 0; // base inventory slots
 
@@ -52,7 +53,7 @@ public class SubmarineStats : MonoBehaviour
     public float GetMaxSafeDepth()
     {
         // Pressure resistance system
-        return vitalityLevel * 50f; // example scaling
+        return baseSafeDepth + (vitalityLevel * 100f); // example scaling
     }
 
     public float GetArmStrength()
@@ -72,7 +73,7 @@ public class SubmarineStats : MonoBehaviour
 
     public int GetStorageCapacity()
     {
-        return (storageLevel * 5); // +5 inventory slots per level
+        return storageLevel * 5; // +5 inventory slots per level
     }
 
     public int UpgradeStat(string stat)

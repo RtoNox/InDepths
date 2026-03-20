@@ -122,31 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &653737856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5017187759749167951, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
-  m_PrefabInstance: {fileID: 1450100448}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &653737863 stripped
+--- !u!4 &1231849862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
-  m_PrefabInstance: {fileID: 1450100448}
+  m_PrefabInstance: {fileID: 1378317945}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653737864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653737856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1545a2e696452047ba1040846518ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  DestroyOnDeath: 0
 --- !u!1 &1284959641
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,12 +157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterPrefabs:
-  - {fileID: 7687393796560800048, guid: 026483ec692d2d94f9e2cb9550d58f39, type: 3}
+  - {fileID: 5893338955390670106, guid: 2118cfcbc2d667e438471e1da8610311, type: 3}
   minBounds: 5
   maxBounds: 10
   spawnInterval: 4
   maxCount: 10
-  player: {fileID: 653737863}
+  player: {fileID: 1231849862}
 --- !u!4 &1284959643
 Transform:
   m_ObjectHideFlags: 0
@@ -198,7 +178,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1450100448
+--- !u!1001 &1378317945
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -206,17 +186,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 123608683345546725, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.5
+    - target: {fileID: -339442312562928432, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: drainRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: -3.2813835
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.17471446
       objectReference: {fileID: 0}
     - target: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -257,10 +237,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5017187759749167951, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 653737864}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
 --- !u!1 &2144868374
 GameObject:
@@ -367,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d8ed1b105bdd14ca7cb55522b52772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 653737863}
+  player: {fileID: 1231849862}
   maxDistance: 1
   offsetSmoothSpeed: 3
 --- !u!1660057539 &9223372036854775807
@@ -376,4 +353,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 2144868377}
   - {fileID: 1284959643}
-  - {fileID: 1450100448}
+  - {fileID: 1378317945}
