@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spotlight Moving Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 33
+        width: 50
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf93305f3ef8d454dbbd28fc73d6ed21
+      internalID: -2109636111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spotlight Moving Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 34
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c67195ce7549d4291676dc29231657
+      internalID: 155851185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spotlight Moving Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 33
+        width: 50
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6563cec36c4c074eb8764dcf1f74892
+      internalID: -1252675684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spotlight Moving Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 13
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c58a9fbddc82b84399d859b2e6bf442
+      internalID: 431712901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spotlight Moving Animation-Sheet_0: -2109636111
+      Spotlight Moving Animation-Sheet_1: 155851185
+      Spotlight Moving Animation-Sheet_2: -1252675684
+      Spotlight Moving Animation-Sheet_3: 431712901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
