@@ -162,7 +162,27 @@ public class PlayerController : MonoBehaviour
         int current = inventory.items.Count;
         int max = GetComponent<SubmarineStats>().GetStorageCapacity();
 
+        if (max <= 0)
+        {
+            storageText.text = "";
+            return;
+        }
+
         storageText.text = "Storage: " + current + " / " + max;
+
+        float ratio = (float)current / max;
+
+        if (ratio < 0.5f)
+            storageText.color = Color.white;
+        else if (ratio < 0.9f)
+            storageText.color = Color.yellow;
+        else
+            storageText.color = Color.red;
+
+        if (current >= max)
+        {
+            storageText.text = "Storage FULL!";
+        }
     }
 
     private void OnDrawGizmosSelected()
