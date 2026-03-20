@@ -105,6 +105,15 @@ MonoBehaviour:
   moveSpeed: 5
   acceleration: 5
   drag: 4
+  collectRange: 3
+  collectAngle: 45
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  heldItem: {fileID: 0}
+  armTransform: {fileID: 0}
+  armExtendDistance: 2
+  armExtendSpeed: 10
 --- !u!114 &-485873491006082142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +183,7 @@ MonoBehaviour:
   baseSpeed: 5
   baseHealth: 100
   baseOxygen: 100
+  baseSafeDepth: 100
   baseFlashlightBattery: 100
   baseStorage: 0
 --- !u!50 &123608683345546725

@@ -28,4 +28,13 @@ public class DespawnObject : MonoBehaviour
             }
         }
     }
+
+    void OnDrawGizmosSelected()
+    {
+        if (player != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(player.position, despawnDistance);
+        }
+    }
 }
