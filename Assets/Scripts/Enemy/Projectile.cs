@@ -34,6 +34,8 @@ public class Projectile : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Projectile hit: {other.gameObject.name} with tag: {other.tag}"); // Add this for debugging
+        
         if (other.CompareTag("Player"))
         {
             Health playerHealth = other.GetComponent<Health>();
@@ -42,9 +44,32 @@ public class Projectile : MonoBehaviour
                 playerHealth.TakeDamage(damage);
                 Debug.Log($"Projectile hit player for {damage} damage!");
             }
+            else
+            {
+                // Try to find Health in parent or children
+                playerHealth = other.GetComponentInParent<Health>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(damage);
+                    Debug.Log($"Projectile hit player (found Health in parent) for {damage} damage!");
+                }
+                else
+                {
+                    playerHealth = other.GetComponentInChildren<Health>();
+                    if (playerHealth != null)
+                    {
+                        playerHealth.TakeDamage(damage);
+                        Debug.Log($"Projectile hit player (found Health in child) for {damage} damage!");
+                    }
+                    else
+                    {
+                        Debug.LogError("Player has no Health component!");
+                    }
+                }
+            }
             Destroy(gameObject);
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") || !other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

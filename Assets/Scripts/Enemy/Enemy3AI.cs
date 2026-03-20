@@ -185,9 +185,6 @@ public class Enemy3AI : MonoBehaviour
         isCharging = true;
         rb.velocity = Vector2.zero;
         
-        // Store the player's position at the START of charge (optional)
-        // Vector3 targetPlayerPosition = player.position;
-        
         // Spawn charge effect if available
         if (chargeEffectPrefab != null)
         {
@@ -341,7 +338,7 @@ public class Enemy3AI : MonoBehaviour
     }
 }
 
-// ===== PROJECTILE SCRIPT =====
+// ===== FIXED PROJECTILE SCRIPT =====
 public class EnemyProjectile : MonoBehaviour
 {
     private Vector2 direction;
@@ -349,15 +346,29 @@ public class EnemyProjectile : MonoBehaviour
     private int damage;
     private float lifetime;
     private Rigidbody2D rb;
+    private Collider2D projectileCollider;
     
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        projectileCollider = GetComponent<Collider2D>();
+        
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
         }
+        
+        // Make sure the projectile has a collider
+        if (projectileCollider == null)
+        {
+            // Add a circle collider by default if no collider exists
+            projectileCollider = gameObject.AddComponent<CircleCollider2D>();
+            Debug.Log("Added CircleCollider2D to projectile");
+        }
+        
+        // Set the collider as trigger for better detection
+        projectileCollider.isTrigger = true;
     }
     
     public void Initialize(Vector2 shootDirection, float projectileSpeed, int damageAmount, float lifetimeDuration)
@@ -372,11 +383,29 @@ public class EnemyProjectile : MonoBehaviour
             rb.velocity = direction * speed;
         }
         
+        // Ignore collision with the enemy that shot it
+        GameObject shooter = GameObject.FindObjectOfType<Enemy3AI>()?.gameObject;
+        if (shooter != null && projectileCollider != null)
+        {
+            Collider2D shooterCollider = shooter.GetComponent<Collider2D>();
+            if (shooterCollider != null)
+            {
+                Physics2D.IgnoreCollision(projectileCollider, shooterCollider);
+            }
+        }
+        
+        // Ignore collision with other projectiles (optional)
+        // gameObject.layer = LayerMask.NameToLayer("Projectile");
+        
         Destroy(gameObject, lifetime);
+        
+        Debug.Log($"Projectile initialized: Direction={direction}, Speed={speed}, Damage={damage}");
     }
     
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Projectile triggered with: {other.gameObject.name}, Tag: {other.tag}");
+        
         if (other.CompareTag("Player"))
         {
             Health playerHealth = other.GetComponent<Health>();
@@ -385,16 +414,24 @@ public class EnemyProjectile : MonoBehaviour
                 playerHealth.TakeDamage(damage);
                 Debug.Log($"Projectile hit player for {damage} damage!");
             }
+            else
+            {
+                Debug.LogError("Player has no Health component!");
+            }
             Destroy(gameObject);
         }
-        else if (((1 << other.gameObject.layer) & LayerMask.GetMask("Obstacles")) != 0)
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") || 
+                 other.CompareTag("Obstacle"))
         {
+            Debug.Log("Projectile hit obstacle");
             Destroy(gameObject);
         }
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log($"Projectile collided with: {collision.gameObject.name}, Tag: {collision.gameObject.tag}");
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
@@ -403,11 +440,24 @@ public class EnemyProjectile : MonoBehaviour
                 playerHealth.TakeDamage(damage);
                 Debug.Log($"Projectile hit player for {damage} damage!");
             }
+            else
+            {
+                Debug.LogError("Player has no Health component!");
+            }
             Destroy(gameObject);
         }
-        else if (((1 << collision.gameObject.layer) & LayerMask.GetMask("Obstacles")) != 0)
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles") || 
+                 collision.gameObject.CompareTag("Obstacle"))
         {
+            Debug.Log("Projectile hit obstacle");
             Destroy(gameObject);
         }
+    }
+    
+    // Visual debug in scene view
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 0.2f);
     }
 }
