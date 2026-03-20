@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<Inventory>();
+
         if (armTransform != null)
         {
             armStartPos = armTransform.localPosition;
