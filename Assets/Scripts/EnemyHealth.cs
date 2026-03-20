@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
 
-    public bool DestroyOnDeath = true;
+    private LootDrop lootDrop;
 
     void Awake()
     {
         currentHealth = maxHealth;
+        lootDrop = GetComponent<LootDrop>();
     }
 
     public void TakeDamage(int amount)
@@ -33,11 +34,12 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Player died!");
+        Debug.Log(gameObject.name + " died!");
 
-        if (DestroyOnDeath)
+        // Loot drop logic
+        if (lootDrop != null)
         {
-            Destroy(gameObject);
+            lootDrop.DropLoot();
         }
     }
 }
