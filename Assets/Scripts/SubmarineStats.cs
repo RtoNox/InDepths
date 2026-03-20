@@ -21,7 +21,6 @@ public class SubmarineStats : MonoBehaviour
     public float baseOxygen = 100f;
     public float baseSafeDepth = 100f; // depth before pressure damage starts
     public float baseFlashlightBattery = 100f;
-    public int baseStorage = 0; // base inventory slots
 
     // === CALCULATED STATS ===
 

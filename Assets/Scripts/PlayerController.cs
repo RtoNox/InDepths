@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,17 +7,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float acceleration = 5f;
     public float drag = 4f;
-
-    private Rigidbody2D rb;
-    private Vector2 movement;
-
-    [Header("Item Collection")]
-    public float collectRange = 3f;
-    public float collectAngle = 45f; // cone angle
-    public LayerMask itemLayer; // Layer for items to collect
-
-    private Inventory inventory;
-    public Item heldItem;
 
     [Header("Robot Arm")]
     public Transform armTransform; // optional (can be null)
@@ -26,6 +16,19 @@ public class PlayerController : MonoBehaviour
     private bool isExtending = false;
     private Vector3 armStartPos;
     private Vector3 armTargetPos;
+    private Rigidbody2D rb;
+    private Vector2 movement;
+
+    [Header("Item Collection")]
+    public float collectRange = 3f;
+    public float collectAngle = 30f; // cone angle
+    public LayerMask itemLayer; // Layer for items to collect
+
+    private Inventory inventory;
+    public Item heldItem;
+
+    [Header("UI")]
+    public TextMeshProUGUI storageText;
 
     void Awake()
     {
@@ -54,6 +57,8 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         movement = movement.normalized;
+
+        UpdateStorageUI();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -148,6 +153,16 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Cannot collect item: Return to base and sell items to free up space.");
         }
+    }
+
+    void UpdateStorageUI()
+    {
+        if (storageText == null || inventory == null) return;
+
+        int current = inventory.items.Count;
+        int max = GetComponent<SubmarineStats>().GetStorageCapacity();
+
+        storageText.text = current + " / " + max;
     }
 
     private void OnDrawGizmosSelected()

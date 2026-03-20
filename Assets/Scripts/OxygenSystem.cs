@@ -6,7 +6,7 @@ public class OxygenSystem : MonoBehaviour
     private SubmarineStats stats;
     private Health health;
 
-    public float drainRate = 5f;
+    public float drainRate = 1f;
 
     void Start()
     {

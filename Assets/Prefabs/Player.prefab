@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6797341895319989327}
   - component: {fileID: 9203448944132450054}
   - component: {fileID: 123608683345546725}
+  - component: {fileID: 7209148128614241386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -105,15 +106,16 @@ MonoBehaviour:
   moveSpeed: 5
   acceleration: 5
   drag: 4
+  armTransform: {fileID: 0}
+  armExtendDistance: 2
+  armExtendSpeed: 10
   collectRange: 3
   collectAngle: 45
   itemLayer:
     serializedVersion: 2
     m_Bits: 8
   heldItem: {fileID: 0}
-  armTransform: {fileID: 0}
-  armExtendDistance: 2
-  armExtendSpeed: 10
+  storageText: {fileID: 0}
 --- !u!114 &-485873491006082142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +187,6 @@ MonoBehaviour:
   baseOxygen: 100
   baseSafeDepth: 100
   baseFlashlightBattery: 100
-  baseStorage: 0
 --- !u!50 &123608683345546725
 Rigidbody2D:
   serializedVersion: 4
@@ -213,3 +214,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7209148128614241386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017187759749167951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d78b6b3556588344bf5f4bb7a527af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
