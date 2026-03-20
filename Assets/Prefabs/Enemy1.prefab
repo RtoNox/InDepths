@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2989608327009569829}
   - component: {fileID: 8168731668390713529}
   - component: {fileID: 8039884020004047768}
+  - component: {fileID: 5112564819983451135}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -105,9 +106,6 @@ MonoBehaviour:
   baseWeight: 1
   idealDepth: 5000
   falloff: 50
-  player: {fileID: 0}
-  despawnDistance: 200
-  checkInterval: 1
 --- !u!58 &2989608327009569829
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,3 +199,18 @@ MonoBehaviour:
   dashBackDistance: 2
   dashBackDuration: 0.3
   attackRange: 1.5
+--- !u!114 &5112564819983451135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893338955390670106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8854e420b8f5f8045a9fafcfad6f3d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  despawnDistance: 40
+  checkInterval: 1
