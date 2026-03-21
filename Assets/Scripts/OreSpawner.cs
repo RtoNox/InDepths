@@ -94,4 +94,13 @@ public class OreSpawner : MonoBehaviour
             ds.player = player;
         }
     }
+
+    void OnDrawGizmosSelected()
+    {
+        if (player == null) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(player.position, minBounds);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(player.position, maxBounds);
+    }
 }

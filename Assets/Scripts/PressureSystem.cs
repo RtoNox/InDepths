@@ -10,6 +10,7 @@ public class PressureSystem : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<SubmarineStats>();
         health = GetComponent<Health>();
     }
@@ -24,7 +25,7 @@ public class PressureSystem : MonoBehaviour
             float excessDepth = depth - safeDepth;
 
             float damage = excessDepth * 0.1f; // scales with depth
-            health.TakeDamage(Mathf.FloorToInt(damage * Time.deltaTime));
+            health.TakeDamage(1 + (Mathf.FloorToInt(damage * Time.deltaTime)));
         }
     }
 }

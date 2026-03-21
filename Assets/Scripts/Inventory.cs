@@ -16,6 +16,10 @@ public class Inventory : MonoBehaviour
     {
         return items.Count < stats.GetStorageCapacity();
     }
+    public int GetRemainingSlots()
+    {
+        return stats.GetStorageCapacity() - items.Count;
+    }
 
     public void AddItem(Item item)
     {

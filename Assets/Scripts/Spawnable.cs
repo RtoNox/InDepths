@@ -34,4 +34,12 @@ public class Spawnable : MonoBehaviour
     {
         onDestroyed?.Invoke();
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Vector3 pos = transform.position;
+        Gizmos.DrawLine(new Vector3(pos.x - 0.5f, minDepth, pos.z), new Vector3(pos.x + 0.5f, minDepth, pos.z));
+        Gizmos.DrawLine(new Vector3(pos.x - 0.5f, maxDepth, pos.z), new Vector3(pos.x + 0.5f, maxDepth, pos.z));
+    }
 }
