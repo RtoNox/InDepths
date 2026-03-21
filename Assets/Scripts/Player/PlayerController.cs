@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float acceleration = 5f;
     public float drag = 4f;
+    public float surfaceY = 0f; // y = 0 is water surface
+    public float maxDepthY = -10000f; // max depth player can go
 
     [Header("Robot Arm")]
     public Transform armTransform; // optional (can be null)
@@ -192,7 +194,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Surface limit: Prevent moving above water
-        if (transform.position.y > 0f)
+        if (transform.position.y > surfaceY || transform.position.y < maxDepthY)
         {
             // Clamp position
             transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
