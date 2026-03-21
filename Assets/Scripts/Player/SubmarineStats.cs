@@ -21,6 +21,7 @@ public class SubmarineStats : MonoBehaviour
     public float baseOxygen = 100f;
     public float baseSafeDepth = 100f; // depth before pressure damage starts
     public float baseFlashlightBattery = 100f;
+    public int baseStorage = 10; // base inventory slots
 
     // === CALCULATED STATS ===
 
@@ -72,7 +73,7 @@ public class SubmarineStats : MonoBehaviour
 
     public int GetStorageCapacity()
     {
-        return storageLevel * 10; // +10 inventory slots per level
+        return baseStorage + (storageLevel * 10); // +10 inventory slots per level
     }
 
     public int UpgradeStat(string stat)
