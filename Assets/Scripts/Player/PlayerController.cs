@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,8 +20,21 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float acceleration = 5f;
     public float drag = 4f;
+
+    [Header("Buoyancy")]
     public float surfaceY = 0f; // y = 0 is water surface
     public float maxDepthY = -10000f; // max depth player can go
+    public float buoyancyForce = 15f;
+    public float surfaceDamping = 4f;
+    public float waveStrength = 0.3f;
+    public float waveSpeed = 2f;
+
+    [Header("Surface Physics")]
+    public float waterSurfaceY = 0f;
+    public float normalGravity = 0.1f;
+    public float airGravity = 3f;
+
+    private bool isAboveSurface = false;
 
     [Header("Robot Arm")]
     public Transform armTransform; // optional (can be null)
@@ -246,27 +260,86 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 5f; // default speed for other states
         }
 
-        // Smooth underwater-like movement
-        Vector2 targetVelocity = movement * moveSpeed;
-        rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, acceleration * Time.fixedDeltaTime);
+        CheckSurfaceState();
 
-        // Apply drag when no input
-        if (movement.magnitude == 0)
+        if (!isAboveSurface)
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, drag * Time.fixedDeltaTime);
+            // Normal underwater movement
+            Vector2 targetVelocity = movement * moveSpeed;
+            rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, acceleration * Time.fixedDeltaTime);
+
+            if (movement.magnitude == 0)
+            {
+                rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, drag * Time.fixedDeltaTime);
+            }
         }
 
-        // Surface limit: Prevent moving above water
-        if (transform.position.y > surfaceY || transform.position.y < maxDepthY)
+        if (transform.position.y >= surfaceY)
         {
-            // Clamp position
-            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+            HandleBuoyancy();
+        }
+        else if (transform.position.y < maxDepthY)
+        {
+            // Prevent going too deep
+            transform.position = new Vector3(transform.position.x, maxDepthY, transform.position.z);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+        }
+    }
 
-            // Stop upward movement
-            if (rb.velocity.y > 0)
+    void CheckSurfaceState()
+    {
+        if (transform.position.y > waterSurfaceY)
+        {
+            if (!isAboveSurface)
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                isAboveSurface = true;
+
+                // Kill all movement instantly
+                rb.velocity = Vector2.zero;
+
+                // Apply strong gravity to pull back down
+                rb.gravityScale = airGravity;
             }
+        }
+        else
+        {
+            if (isAboveSurface)
+            {
+                isAboveSurface = false;
+
+                // Restore underwater physics
+                rb.gravityScale = normalGravity;
+            }
+        }
+    }
+
+    void HandleBuoyancy()
+    {
+        float distanceToSurface = surfaceY - transform.position.y;
+
+        // Apply wave motion (only near surface)
+        float waveOffset = Mathf.Sin(Time.time * waveSpeed) * waveStrength;
+
+        // If near surface, apply floating behavior
+        if (transform.position.y >= surfaceY - 1.5f)
+        {
+            // Buoyancy force (push upward if below surface)
+            float force = distanceToSurface * buoyancyForce;
+
+            rb.AddForce(Vector2.up * force);
+
+            // Apply damping to prevent bouncing like crazy
+            rb.velocity = new Vector2(
+                rb.velocity.x,
+                rb.velocity.y * (1f - surfaceDamping * Time.fixedDeltaTime)
+            );
+
+            // Apply wave bobbing
+            transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y + waveOffset * Time.fixedDeltaTime,
+                transform.position.z
+            );
         }
     }
 
