@@ -31,12 +31,12 @@ public class SubmarineStats : MonoBehaviour
 
     public int GetMaxAmmo()
     {
-        return baseAmmo + ammoLevel; // +1 per level
+        return baseAmmo + (ammoLevel * 2); // +2 per level
     }
 
     public float GetSpeed()
     {
-        return baseSpeed + (speedLevel * 0.5f);
+        return baseSpeed + (speedLevel * 1f);
     }
 
     public int GetMaxHealth()

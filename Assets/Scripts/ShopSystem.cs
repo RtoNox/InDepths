@@ -5,10 +5,10 @@ public class ShopSystem : MonoBehaviour
     private Inventory inventory;
     private PlayerCurrency currency;
 
-    void Awake()
+    public void Initialize(Inventory inv, PlayerCurrency curr)
     {
-        inventory = GetComponent<Inventory>();
-        currency = GetComponent<PlayerCurrency>();
+        inventory = inv;
+        currency = curr;
     }
 
     public void SellItems()
@@ -20,10 +20,7 @@ public class ShopSystem : MonoBehaviour
             totalValue += item.value;
         }
 
-        // Give money
         currency.AddMoney(totalValue);
-
-        // Clear inventory
         inventory.items.Clear();
 
         Debug.Log("Sold everything for: " + totalValue);
