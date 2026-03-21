@@ -178,13 +178,14 @@ MonoBehaviour:
   armExtendDistance: 2
   armExtendSpeed: 10
   flashlight: {fileID: 8637483852784033610}
+  flashlightController: {fileID: 1745715474032857688}
   collectRange: 3
   collectAngle: 15
   itemLayer:
     serializedVersion: 2
     m_Bits: 8
   heldItem: {fileID: 0}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 2797733465299900, guid: 5ab5c82e08393694480506ccce2126c8, type: 3}
   projectileSpeed: 10
   projectileLifetime: 3
   firePoint: {fileID: 4267086988838618773}
@@ -306,6 +307,8 @@ MonoBehaviour:
   stats: {fileID: 9203448944132450054}
   baseRange: 5
   baseIntensity: 1
+  drainRate: 1
+  isOn: 0
 --- !u!1 &6897644095309860077
 GameObject:
   m_ObjectHideFlags: 0
