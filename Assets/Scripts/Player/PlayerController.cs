@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
@@ -25,7 +26,9 @@ public class PlayerController : MonoBehaviour
     public float armExtendSpeed = 10f;
 
     [Header("Flashlight")]
-    public Transform flashlight;
+    public GameObject flashlight;
+    public FlashlightController flashlightController;
+    private bool flashlightOn;
 
     private bool isExtending = false;
     private Vector3 armStartPos;
@@ -107,8 +110,13 @@ public class PlayerController : MonoBehaviour
 
         if (flashlight != null)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                flashlightController.Toggle();
+            }
+
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            flashlight.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            flashlight.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         }
 
         UpdateStorageUI();
@@ -331,6 +339,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Player fired torpedo! Direction: " + aimDirection);
     }
+
     private void OnDrawGizmosSelected()
     {
         // Visualize collection range and angle
