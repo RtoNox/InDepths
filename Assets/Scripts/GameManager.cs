@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
     // === DAY PROGRESSION ===
     public void EndDay()
     {
-        currentDay++;
         SellItems();
+        currentDay++;
 
         // Reset daily tracker
         moneyEarnedToday = 0;
