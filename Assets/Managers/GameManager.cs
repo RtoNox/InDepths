@@ -1,4 +1,7 @@
 using UnityEngine;
+using TMPro;
+using JetBrains.Annotations;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +21,12 @@ public class GameManager : MonoBehaviour
     [Header("Game State")]
     public bool isGameOver = false;
     public bool hasWon = false;
+
+    [Header("Day Results UI")]
+    public TextMeshProUGUI dayCompleted;
+    public TextMeshProUGUI moneyEarned;
+    public TextMeshProUGUI itemsSold;
+    public GameObject resultsPanel;
 
     void Awake()
     {
@@ -52,13 +61,35 @@ public class GameManager : MonoBehaviour
     // === DAY PROGRESSION ===
     public void EndDay()
     {
+        CheckWinCondition();
+
+        int itemCount = 0;
+
+        foreach (Item item in inventory.items)
+        {
+            itemCount++;
+        }
+
+        dayCompleted.text = "Day " + currentDay + " Completed!";
+        moneyEarned.text = "Money Earned: $" + moneyEarnedToday;
+        itemsSold.text = "Items Sold: " + itemCount;
+
         SellItems();
+    }
+
+    public void CloseResultsUI()
+    {
+        resultsPanel.SetActive(false);
+    }
+
+    public void StartNewDay()
+    {
+        dayCompleted.text = "";
+        moneyEarned.text = "";
         currentDay++;
 
         // Reset daily tracker
         moneyEarnedToday = 0;
-
-        CheckWinCondition();
     }
 
     // === PAY DEBT ===
