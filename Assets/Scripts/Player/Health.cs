@@ -6,8 +6,6 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public bool DestroyOnDeath = true;
-
     void Awake()
     {
         currentHealth = maxHealth;
@@ -33,10 +31,5 @@ public class Health : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died!");
-
-        if (DestroyOnDeath)
-        {
-            Destroy(gameObject);
-        }
     }
 }

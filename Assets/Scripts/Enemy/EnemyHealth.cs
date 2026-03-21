@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " died!");
+        Destroy(gameObject);
 
         // Loot drop logic
         if (lootDrop != null)

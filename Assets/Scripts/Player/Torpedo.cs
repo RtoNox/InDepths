@@ -69,7 +69,7 @@ public class Torpedo : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") || !other.CompareTag("Enemy"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") || !other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

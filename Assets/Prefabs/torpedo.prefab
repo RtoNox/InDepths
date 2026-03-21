@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 873842696151172281}
   - component: {fileID: 9219659032288657254}
   m_Layer: 0
-  m_Name: torpedo
+  m_Name: Torpedo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,5 +169,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
