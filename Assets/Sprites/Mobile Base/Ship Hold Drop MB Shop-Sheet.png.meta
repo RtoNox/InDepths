@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ship Hold Drop MB Shop-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 4
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8502cabbdadaec49bbbf5ffaafbe08e
+      internalID: -533006118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop MB Shop-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 5
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aff0ebb5ee4f2440a62af66bf0f7426
+      internalID: 1913238441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop MB Shop-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 16
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9197de5480f746b478cdbd9b875f383e
+      internalID: -265341202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop MB Shop-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 15
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc7930971726114589367198af6d0df
+      internalID: -71828210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ship Hold Drop MB Shop-Sheet_0: -533006118
+      Ship Hold Drop MB Shop-Sheet_1: 1913238441
+      Ship Hold Drop MB Shop-Sheet_2: -265341202
+      Ship Hold Drop MB Shop-Sheet_3: -71828210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

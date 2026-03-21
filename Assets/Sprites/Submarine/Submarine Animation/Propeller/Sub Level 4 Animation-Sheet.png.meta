@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 4
+        width: 328
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357e27184fa3e064f86824153ab7a33d
+      internalID: 50958571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 4
+        width: 337
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f454e3dc345fe4d8a283bf2b96311e
+      internalID: 1704589888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 4
+        width: 349
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52efabb701855541bfdb0a7ed90bec3
+      internalID: 1183242514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 4
+        width: 346
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0851e0a0d03cf0d4baef3745ad31b349
+      internalID: -1434832704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 4
+        width: 343
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a43502b5cc9864caa545871476ef86
+      internalID: -401266558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2622
+        y: 4
+        width: 344
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfb6148b466f024faa2707dcc5d7df1
+      internalID: 184036978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 4
+        width: 341
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a5760580ce746459f88750624f1927
+      internalID: 1409104996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 4
+        width: 340
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e856e484773e447b20f0ef00c4c3a6
+      internalID: -1511362082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4165
+        y: 4
+        width: 338
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5195c9eb85f77f4c98b7ffa238ac8f2
+      internalID: -1422236500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4671
+        y: 4
+        width: 344
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0142b0d1c576d3c42a86bf64100eda0f
+      internalID: 1188087463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 4 Animation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 4
+        width: 341
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f60098b0dd0f24e95b7e1fa064d33c
+      internalID: 700236902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +337,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sub Level 4 Animation-Sheet_0: 50958571
+      Sub Level 4 Animation-Sheet_1: 1704589888
+      Sub Level 4 Animation-Sheet_10: 700236902
+      Sub Level 4 Animation-Sheet_2: 1183242514
+      Sub Level 4 Animation-Sheet_3: -1434832704
+      Sub Level 4 Animation-Sheet_4: -401266558
+      Sub Level 4 Animation-Sheet_5: 184036978
+      Sub Level 4 Animation-Sheet_6: 1409104996
+      Sub Level 4 Animation-Sheet_7: -1511362082
+      Sub Level 4 Animation-Sheet_8: -1422236500
+      Sub Level 4 Animation-Sheet_9: 1188087463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

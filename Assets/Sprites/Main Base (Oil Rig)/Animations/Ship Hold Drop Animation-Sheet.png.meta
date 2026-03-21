@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 68
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c565e52e39eac69438be2026e48e0af9
+      internalID: 740536894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 69
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642f400bc967c5c438b85c27166f1df0
+      internalID: -1863826252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 80
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfccd35ed6ef514790c3d9cebc9dd17
+      internalID: 1509264294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 79
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdbcd7faeb97564b8dd50db32f037c6
+      internalID: -57155300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 8
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8a755a01ab1e94997bf3adfb448115
+      internalID: -268120536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 8
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e694a898b7087af4fa5e5b20836fad86
+      internalID: 169821142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 8
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f01ff5fe32f9942a167ed075eb7b0e
+      internalID: 2039611653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship Hold Drop Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 8
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df70df6353cb8640b48345f87dd997b
+      internalID: 1411100460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ship Hold Drop Animation-Sheet_0: 740536894
+      Ship Hold Drop Animation-Sheet_1: -1863826252
+      Ship Hold Drop Animation-Sheet_2: 1509264294
+      Ship Hold Drop Animation-Sheet_3: -57155300
+      Ship Hold Drop Animation-Sheet_4: -268120536
+      Ship Hold Drop Animation-Sheet_5: 169821142
+      Ship Hold Drop Animation-Sheet_6: 2039611653
+      Ship Hold Drop Animation-Sheet_7: 1411100460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

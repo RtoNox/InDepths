@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 406
+        width: 315
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a53522e8e02a048b07724e7ffc570d
+      internalID: -736979204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 381
+        width: 315
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22b2a3d27a13544b9b48b8dcbff0e6d
+      internalID: -43017153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 329
+        width: 314
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f3cf11930168f44a152ac28f6e30bb
+      internalID: 221780525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 261
+        width: 319
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128e4ac3a64300c42b1fcce4ade8b233
+      internalID: -1161295665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 130
+        width: 324
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd539b840ce03f488536e6292369aec
+      internalID: 1355324062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 15
+        width: 322
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16de58e965af3e143b8ab72caa9c3845
+      internalID: -666121738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 130
+        width: 313
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c383c29b400a3b14cb908af92922e6bc
+      internalID: -1586663850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 261
+        width: 329
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d8efe812c0b6247a536993a4f1c0a4
+      internalID: 834407809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2991
+        y: 329
+        width: 314
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51fe89ed4b87f5e4dafc129484d39fa8
+      internalID: -1452049900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 381
+        width: 329
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb1ee93115275b48a5e1c12143982f0
+      internalID: -1731531433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +316,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crane Animation-Sheet_0: -736979204
+      Crane Animation-Sheet_1: -43017153
+      Crane Animation-Sheet_2: 221780525
+      Crane Animation-Sheet_3: -1161295665
+      Crane Animation-Sheet_4: 1355324062
+      Crane Animation-Sheet_5: -666121738
+      Crane Animation-Sheet_6: -1586663850
+      Crane Animation-Sheet_7: 834407809
+      Crane Animation-Sheet_8: -1452049900
+      Crane Animation-Sheet_9: -1731531433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
