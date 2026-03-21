@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: shopSystem
       value: 
-      objectReference: {fileID: 2079792690}
+      objectReference: {fileID: 0}
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: storageText
       value: 
@@ -2431,7 +2431,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2079792691}
-  - component: {fileID: 2079792690}
   - component: {fileID: 2079792689}
   - component: {fileID: 2079792688}
   m_Layer: 0
@@ -2468,18 +2467,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUI: {fileID: 2131899264}
   PlayerHUD: {fileID: 1302795345}
---- !u!114 &2079792690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079792687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6505ccb9baa231418c4af34c8caadcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2079792691
 Transform:
   m_ObjectHideFlags: 0

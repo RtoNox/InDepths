@@ -62,18 +62,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("Shop")]
     public ShopUIController shopUI;
-    public ShopSystem shopSystem;
     
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<SubmarineStats>();
-        shopSystem = FindObjectOfType<ShopSystem>();
         shopUI = FindObjectOfType<ShopUIController>();
 
-        shopSystem.Initialize(
+        GameManager.Instance.Initialize(
             GetComponent<Inventory>(),
             GetComponent<PlayerCurrency>()
         );
@@ -177,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F) && !shopUI.IsOpen())
             {
-                shopSystem.SellItems(); // SELL FIRST
+                GameManager.Instance.EndDay();
                 shopUI.OpenShop();
                 torpedoesRemaining = 10; // Resupply torpedoes when visiting shop
                 flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop

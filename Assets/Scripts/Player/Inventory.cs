@@ -25,4 +25,9 @@ public class Inventory : MonoBehaviour
     {
         items.Add(item);
     }
+
+    public void ResetInventory()
+    {
+        items.Clear();
+    }
 }
