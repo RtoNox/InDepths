@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float armExtendDistance = 2f;
     public float armExtendSpeed = 10f;
 
+    [Header("Flashlight")]
+    public Transform flashlight;
+
     private bool isExtending = false;
     private Vector3 armStartPos;
     private Vector3 armTargetPos;
@@ -38,21 +41,22 @@ public class PlayerController : MonoBehaviour
     private Inventory inventory;
     public Item heldItem;
 
-    [Header("Game UI")]
-    public TextMeshProUGUI storageText;
-
-    [Header("Shop")]
-    public ShopUIController shopUI;
-    public ShopSystem shopSystem;
-
     [Header("Torpedo Shooting")]
     public GameObject projectilePrefab;
     private int damageAmount;
     public float projectileSpeed = 10f;
     public float projectileLifetime = 3f;
     public Transform firePoint;
-    public float fireRate = 0.5f;
+    public float fireRate = 1f;
     private float nextFireTime = 0f;
+
+    [Header("Game UI")]
+    public TextMeshProUGUI storageText;
+
+    [Header("Shop")]
+    public ShopUIController shopUI;
+    public ShopSystem shopSystem;
+    
 
     void Awake()
     {
@@ -100,6 +104,12 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         movement = movement.normalized;
+
+        if (flashlight != null)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            flashlight.rotation = Quaternion.Euler(0, 0, angle - 90f);
+        }
 
         UpdateStorageUI();
 
