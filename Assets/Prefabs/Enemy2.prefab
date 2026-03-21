@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 462335213586245645}
   - component: {fileID: 185976009965828012}
   - component: {fileID: 7562005106648576631}
+  - component: {fileID: 5895226460258966041}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,3 +239,17 @@ MonoBehaviour:
   player: {fileID: 0}
   despawnDistance: 40
   checkInterval: 1
+--- !u!114 &5895226460258966041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509978915797621727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3305afe314ab2145ab7749a22a0bb01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0

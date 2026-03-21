@@ -1,75 +1,69 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class UpgradeShop : MonoBehaviour
 {
     private PlayerCurrency currency;
     private SubmarineStats stats;
 
-    public int baseUpgradeCost = 50;
+    [Header("Upgrade Data")]
+    public List<StatUpgradeData> upgradeDataList;
+
+    private Dictionary<string, StatUpgradeData> upgradeDataDict;
 
     void Awake()
     {
         currency = GetComponent<PlayerCurrency>();
         stats = GetComponent<SubmarineStats>();
+
+        upgradeDataDict = new Dictionary<string, StatUpgradeData>();
+
+        foreach (var data in upgradeDataList)
+        {
+            upgradeDataDict[data.statName.ToLower()] = data;
+        }
     }
 
     // === BUTTON FUNCTIONS ===
 
-    public void UpgradeDamage()
-    {
-        TryUpgrade("damage", stats.damageLevel);
-    }
-
-    public void UpgradeAmmo()
-    {
-        TryUpgrade("ammo", stats.ammoLevel);
-    }
-
-    public void UpgradeSpeed()
-    {
-        TryUpgrade("speed", stats.speedLevel);
-    }
-
-    public void UpgradeVitality()
-    {
-        TryUpgrade("vitality", stats.vitalityLevel);
-    }
-
-    public void UpgradeOxygen()
-    {
-        TryUpgrade("oxygen", stats.oxygenLevel);
-    }
-
-    public void UpgradeArmStrength()
-    {
-        TryUpgrade("armstrength", stats.armStrengthLevel);
-    }
-
-    public void UpgradeFlashlightStrength()
-    {
-        TryUpgrade("flashlightstrength", stats.flashlightStrengthLevel);
-    }
-
-    public void UpgradeFlashlightBattery()
-    {
-        TryUpgrade("flashlightbattery", stats.flashlightBatteryLevel);
-    }
-
-    public void UpgradeStorage()
-    {
-        TryUpgrade("storage", stats.storageLevel);
-    }
+    public void UpgradeDamage() => TryUpgrade("damage");
+    public void UpgradeAmmo() => TryUpgrade("ammo");
+    public void UpgradeSpeed() => TryUpgrade("speed");
+    public void UpgradeVitality() => TryUpgrade("vitality");
+    public void UpgradeOxygen() => TryUpgrade("oxygen");
+    public void UpgradeArmStrength() => TryUpgrade("armstrength");
+    public void UpgradeFlashlightStrength() => TryUpgrade("flashlightstrength");
+    public void UpgradeFlashlightBattery() => TryUpgrade("flashlightbattery");
+    public void UpgradeStorage() => TryUpgrade("storage");
 
     // === CORE LOGIC ===
 
-    void TryUpgrade(string stat, int currentLevel)
+    public void TryUpgrade(string stat)
     {
-        int cost = GetUpgradeCost(currentLevel);
+        stat = stat.ToLower();
+
+        if (!upgradeDataDict.ContainsKey(stat))
+        {
+            Debug.LogWarning("No upgrade data for: " + stat);
+            return;
+        }
+
+        StatUpgradeData data = upgradeDataDict[stat];
+        int currentLevel = GetStatLevel(stat);
+
+        // Max level check
+        if (currentLevel >= data.maxLevel)
+        {
+            Debug.Log(stat + " is MAX level!");
+            return;
+        }
+
+        int cost = data.GetCost(currentLevel);
 
         if (currency.SpendMoney(cost))
         {
             stats.UpgradeStat(stat);
-            Debug.Log(stat + " upgraded!");
+            Debug.Log(stat + " upgraded! Cost: " + cost);
         }
         else
         {
@@ -77,8 +71,21 @@ public class UpgradeShop : MonoBehaviour
         }
     }
 
-    int GetUpgradeCost(int level)
+    int GetStatLevel(string stat)
     {
-        return baseUpgradeCost * (level + 1); // scaling cost
+        switch (stat)
+        {
+            case "damage": return stats.damageLevel;
+            case "ammo": return stats.ammoLevel;
+            case "speed": return stats.speedLevel;
+            case "vitality": return stats.vitalityLevel;
+            case "oxygen": return stats.oxygenLevel;
+            case "armstrength": return stats.armStrengthLevel;
+            case "flashlightstrength": return stats.flashlightStrengthLevel;
+            case "flashlightbattery": return stats.flashlightBatteryLevel;
+            case "storage": return stats.storageLevel;
+
+            default: return 0;
+        }
     }
 }
