@@ -499,6 +499,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2797733465299900, guid: 5ab5c82e08393694480506ccce2126c8, type: 3}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: baseSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: baseSafeDepth
       value: 100
       objectReference: {fileID: 0}

@@ -151,6 +151,10 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = stats.GetSpeed();
         }
+        else
+        {
+            moveSpeed = 5f; // default speed for other states
+        }
 
         // Smooth underwater-like movement
         Vector2 targetVelocity = movement * moveSpeed;
