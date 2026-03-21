@@ -10,23 +10,25 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private GameObject settingsCanvas;
-    [SerializeField] private GameObject mainMenuCanvas; // Add reference to main menu canvas
-    
+    [SerializeField] private GameObject mainMenuCanvas;
+    [SerializeField] private GameObject SaveLoadCanvas;
     void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1f;
         
-        // Ensure main menu is active and settings is inactive at start
         if (mainMenuCanvas != null)
             mainMenuCanvas.SetActive(true);
         
         if (settingsCanvas != null)
             settingsCanvas.SetActive(false);
         
+        if (SaveLoadCanvas != null)
+            SaveLoadCanvas.SetActive(false);
+        
         if (startButton != null)
-            startButton.onClick.AddListener(StartGame);
+            startButton.onClick.AddListener(OpenSaveLoadMenu);
         
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(OpenSettings);
@@ -34,13 +36,29 @@ public class MainMenuManager : MonoBehaviour
         if (exitButton != null)
             exitButton.onClick.AddListener(ExitGame);
     }
+
+    void OpenSaveLoadMenu()
+    {
+        PlayClickSound();
+        Debug.Log("Opening save/load menu...");
+        
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(false);
+        
+        if (settingsCanvas != null)
+            SaveLoadCanvas.SetActive(true);
+    }
     
     void StartGame()
     {
         PlayClickSound();
-        Debug.Log("Starting game...");
+        Debug.Log("Opening save/load menu...");
         
-        SceneManager.LoadScene("MainScene");
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(false);
+        
+        if (settingsCanvas != null)
+            settingsCanvas.SetActive(true);
     }
     
     void OpenSettings()
