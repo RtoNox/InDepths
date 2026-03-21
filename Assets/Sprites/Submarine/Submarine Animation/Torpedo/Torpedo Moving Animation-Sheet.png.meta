@@ -95,7 +95,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 49
+        width: 64
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da9c42d4e34c8b448b67da90bcce5cd
+      internalID: -332704178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 49
+        width: 61
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9c8f36ce2a4134fbef3de4a0b1ad95
+      internalID: -1342582237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 49
+        width: 60
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1d795b9bba46f478bde997708619eb
+      internalID: 2041447481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 49
+        width: 60
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28c7ec01f7b46d439199342528c32a7
+      internalID: 642968308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 49
+        width: 65
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e77497975e115e4582c65bad8e35e06
+      internalID: 1331451048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Moving Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 49
+        width: 66
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a88a9b5456275744a9eae5ca143944f
+      internalID: -829683573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +232,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Torpedo Moving Animation-Sheet_0: -1792804393
+      Torpedo Moving Animation-Sheet_1: -332704178
+      Torpedo Moving Animation-Sheet_2: 1959109213
+      Torpedo Moving Animation-Sheet_3: -1342582237
+      Torpedo Moving Animation-Sheet_4: 2041447481
+      Torpedo Moving Animation-Sheet_5: 642968308
+      Torpedo Moving Animation-Sheet_6: 1013085560
+      Torpedo Moving Animation-Sheet_7: 1331451048
+      Torpedo Moving Animation-Sheet_8: -917899544
+      Torpedo Moving Animation-Sheet_9: -829683573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

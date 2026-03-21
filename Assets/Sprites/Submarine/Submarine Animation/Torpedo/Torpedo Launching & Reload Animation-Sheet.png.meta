@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 33
+        width: 65
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664bcc0ecc1e28e44aa3ace8d049ecbe
+      internalID: -254574773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 33
+        width: 70
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef0909cb8834f648923fde43f8e8165
+      internalID: -1337626748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 33
+        width: 77
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e75e020d4ed53b4da341648bbd9c67c
+      internalID: -440928858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 33
+        width: 101
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3c877dc7c374941922d1d92c71664a
+      internalID: 1175032668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 33
+        width: 70
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85e991d8d5692e48b5534a634ab2fc9
+      internalID: 2052383637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 33
+        width: 77
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e5c9e715dee144e9f8963b7ba2360d
+      internalID: -718466168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 33
+        width: 77
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff529bfc4d110c45b9d0c265538e788
+      internalID: 391335934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torpedo Launching & Reload Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 33
+        width: 101
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fa0de425778fb48a1495f06f9015e5
+      internalID: -722071299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Torpedo Launching & Reload Animation-Sheet_0: -254574773
+      Torpedo Launching & Reload Animation-Sheet_1: -1337626748
+      Torpedo Launching & Reload Animation-Sheet_2: -440928858
+      Torpedo Launching & Reload Animation-Sheet_3: 1175032668
+      Torpedo Launching & Reload Animation-Sheet_4: 2052383637
+      Torpedo Launching & Reload Animation-Sheet_5: -718466168
+      Torpedo Launching & Reload Animation-Sheet_6: 391335934
+      Torpedo Launching & Reload Animation-Sheet_7: -722071299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
