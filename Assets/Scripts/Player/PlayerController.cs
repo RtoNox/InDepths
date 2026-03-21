@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState currentState = PlayerState.SpeedBoost;
 
+    private SubmarineStats stats;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
     public float acceleration = 5f;
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<Inventory>();
+        stats = GetComponent<SubmarineStats>();
 
         if (armTransform != null)
         {
@@ -144,6 +147,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (currentState == PlayerState.SpeedBoost)
+        {
+            moveSpeed = stats.GetSpeed();
+        }
+
         // Smooth underwater-like movement
         Vector2 targetVelocity = movement * moveSpeed;
         rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, acceleration * Time.fixedDeltaTime);
@@ -209,6 +217,9 @@ public class PlayerController : MonoBehaviour
 
     void TryCollect(Item item)
     {
+        int armStrength = stats.GetArmStrength();
+        if (armStrength < item.weight)
+
         // PRIORITY 1: Put into storage if possible
         if (inventory.HasSpace())
         {
@@ -233,7 +244,7 @@ public class PlayerController : MonoBehaviour
         if (storageText == null || inventory == null) return;
 
         int current = inventory.items.Count;
-        int max = GetComponent<SubmarineStats>().GetStorageCapacity();
+        int max = stats.GetStorageCapacity();
 
         if (max <= 0)
         {
@@ -279,7 +290,7 @@ public class PlayerController : MonoBehaviour
         projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         // Get damage from submarine stats
-        damageAmount = GetComponent<SubmarineStats>().GetDamage();
+        damageAmount = stats.GetDamage();
 
         // Get or add projectile component
         Torpedo projScript = projectile.GetComponent<Torpedo>();

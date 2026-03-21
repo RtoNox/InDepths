@@ -55,7 +55,7 @@ public class SubmarineStats : MonoBehaviour
         return baseSafeDepth + (vitalityLevel * 100f); // example scaling
     }
 
-    public float GetArmStrength()
+    public int GetArmStrength()
     {
         return armStrengthLevel;
     }
