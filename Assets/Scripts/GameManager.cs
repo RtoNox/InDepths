@@ -76,10 +76,8 @@ public class GameManager : MonoBehaviour
     // === DEATH SYSTEM ===
     public void OnPlayerDeath()
     {
-        // Lose all progress for the day
         inventory.ResetInventory();
 
-        // Reset player/inventory handled elsewhere
         Debug.Log("Player died. Restarting day " + currentDay);
     }
 
