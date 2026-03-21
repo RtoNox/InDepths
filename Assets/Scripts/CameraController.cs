@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CameraController : MonoBehaviour
 {
@@ -13,6 +14,19 @@ public class CameraController : MonoBehaviour
 
     private Camera cam;
     private Vector2 currentOffset;
+
+    [Header("Depth Darkness Settings")]
+    public Light2D globalLight; // your "Darkness"
+
+    public float surfaceY = 0f;
+    public float maxDepthY = -100f;
+
+    [Header("Colors")]
+    public Color surfaceColor = new Color(0.2f, 0.6f, 0.8f); // light blue
+    public Color deepColor = Color.black;
+
+    public Color surfaceLightColor = Color.white;
+    public Color deepLightColor = new Color(0.05f, 0.05f, 0.1f);
 
     void Awake()
     {
@@ -45,5 +59,29 @@ public class CameraController : MonoBehaviour
         finalPosition.z = -10f;
 
         transform.position = finalPosition;
+
+        UpdateDepthDarkness(); // Gradually desaturate colors based on depth
+    }
+
+    void UpdateDepthDarkness()
+    {
+        if (player == null || cam == null) return;
+
+        float playerY = player.position.y;
+
+        // Normalize depth (0 = surface, 1 = deepest)
+        float t = Mathf.InverseLerp(surfaceY, maxDepthY, playerY);
+
+        // Clamp just in case
+        t = Mathf.Clamp01(t);
+
+        // Camera background color
+        cam.backgroundColor = Color.Lerp(surfaceColor, deepColor, t);
+
+        // Global light color
+        if (globalLight != null)
+        {
+            globalLight.color = Color.Lerp(surfaceLightColor, deepLightColor, t);
+        }
     }
 }

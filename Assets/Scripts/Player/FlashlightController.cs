@@ -13,8 +13,8 @@ public class FlashlightController : MonoBehaviour
 
     [Header("Battery")]
     public float drainRate = 1f; // per second
-    private float currentBattery;
-    private float maxBattery;
+    public float currentBattery;
+    public float maxBattery;
 
     [Header("State")]
     public bool isOn = false;
