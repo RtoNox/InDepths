@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KrakenBossDash-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 716
+        width: 2740
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dfdd5e55b6a864b895ede2672046dc
+      internalID: 261260956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossDash-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 4084
+        y: 652
+        width: 3096
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a1854668c5b754b87bd9aa46efc13a
+      internalID: 1204239420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossDash-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 8180
+        y: 524
+        width: 3328
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a2f89ca1313c3469060d843dec61d1
+      internalID: -1611519864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossDash-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 12276
+        y: 444
+        width: 3192
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdb73db739278f43ab05323daf85989
+      internalID: 2066849222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossDash-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 16380
+        y: 1004
+        width: 4
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5682840a184661044a2247a1f6675d29
+      internalID: -742044837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +211,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KrakenBossDash-Sheet_0: 261260956
+      KrakenBossDash-Sheet_1: 1204239420
+      KrakenBossDash-Sheet_2: -1611519864
+      KrakenBossDash-Sheet_3: 2066849222
+      KrakenBossDash-Sheet_4: -742044837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

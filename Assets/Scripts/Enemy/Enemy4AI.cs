@@ -40,7 +40,6 @@ public class Enemy4AI : MonoBehaviour
     private float lastAttackTime;
     private bool isChasing = false;
     private bool isAttacking = false;
-    private bool isBlocking = false;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private Vector3 originalScale;
@@ -244,7 +243,6 @@ public class Enemy4AI : MonoBehaviour
     
     IEnumerator BlockEffect()
     {
-        isBlocking = true;
         
         // Visual feedback
         if (spriteRenderer != null)
@@ -278,7 +276,6 @@ public class Enemy4AI : MonoBehaviour
             spriteRenderer.color = originalColor;
         }
         
-        isBlocking = false;
     }
     
     // Optional: Add a visual indicator for block chance in the inspector

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 149
+        width: 483
+        height: 1887
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657c9d34745835546b7b7e19781dd76c
+      internalID: 2036757456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 242
+        width: 679
+        height: 1794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a310556b902a134ea432cea9e204143
+      internalID: 143445876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 152
+        width: 882
+        height: 1884
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d56bac2196865d4684c7b59419468a2
+      internalID: 331486862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 177
+        width: 970
+        height: 1859
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17caa933f32fe042b8c1586becd7c77
+      internalID: -842569663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4167
+        y: 152
+        width: 882
+        height: 1884
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97969b519e9f597439bfb44c68f6e657
+      internalID: 1863555077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5294
+        y: 242
+        width: 679
+        height: 1794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5837f4653b82e49bf200f991e61008
+      internalID: 475595834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBoss-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 6414
+        y: 149
+        width: 483
+        height: 1887
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f484cdfc9f2a9e84e9cb88cc88157a7b
+      internalID: 1679705652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +253,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KrakenBoss-Sheet_0: 2036757456
+      KrakenBoss-Sheet_1: 143445876
+      KrakenBoss-Sheet_2: 331486862
+      KrakenBoss-Sheet_3: -842569663
+      KrakenBoss-Sheet_4: 1863555077
+      KrakenBoss-Sheet_5: 475595834
+      KrakenBoss-Sheet_6: 1679705652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 42
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf43c7985acf1d40889ac236882cf4b
+      internalID: 2059891858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 23
+        width: 111
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715a9ef42897f8647b4afcb802a802f9
+      internalID: 841108122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 19
+        width: 149
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c4f9b65b8e42c43a2ac4227408648d
+      internalID: -2027146089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 19
+        width: 149
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa74b42a3200dc4c84c92d32d1c68e1
+      internalID: -569474083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 125
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b059ff1513c48fe4ba2aef4bfb4518d8
+      internalID: -816559594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 24
+        width: 62
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002945f258180db49b1cf174b35a57b4
+      internalID: 815393187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 42
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c277595cb516714789ebeb3b4d6e4c3
+      internalID: -1597665442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 75
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ed77202794bbf45a623844eac6d1f5
+      internalID: 2037215325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KrakenBossProjectile-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 18
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0a075cfe8ecc64ca3f77df8cddc4bf
+      internalID: 775592577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +295,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KrakenBossProjectile-Sheet_0: 2059891858
+      KrakenBossProjectile-Sheet_1: -1655885116
+      KrakenBossProjectile-Sheet_10: 815393187
+      KrakenBossProjectile-Sheet_11: -1597665442
+      KrakenBossProjectile-Sheet_12: -1216052220
+      KrakenBossProjectile-Sheet_13: 179819970
+      KrakenBossProjectile-Sheet_14: 2037215325
+      KrakenBossProjectile-Sheet_15: 1648183322
+      KrakenBossProjectile-Sheet_16: 1198754163
+      KrakenBossProjectile-Sheet_17: 775592577
+      KrakenBossProjectile-Sheet_2: 841108122
+      KrakenBossProjectile-Sheet_3: 1919841230
+      KrakenBossProjectile-Sheet_4: -1615503853
+      KrakenBossProjectile-Sheet_5: -2027146089
+      KrakenBossProjectile-Sheet_6: 207137956
+      KrakenBossProjectile-Sheet_7: -571100073
+      KrakenBossProjectile-Sheet_8: -569474083
+      KrakenBossProjectile-Sheet_9: -816559594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
