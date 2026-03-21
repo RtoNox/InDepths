@@ -62,13 +62,9 @@ public class PlayerController : MonoBehaviour
             armStartPos = armTransform.localPosition;
         }
 
-        // Create fire point if not assigned
         if (firePoint == null)
         {
-            GameObject fp = new GameObject("FirePoint");
-            fp.transform.parent = transform;
-            fp.transform.localPosition = new Vector3(1f, 0f, 0f);
-            firePoint = fp.transform;
+            firePoint = transform; // default to player position if not set
         }
     }
 
