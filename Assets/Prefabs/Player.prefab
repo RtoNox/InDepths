@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b912618fce3cb474ea7db35fd6b36860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 2
   moveSpeed: 5
   acceleration: 5
   drag: 4
@@ -110,12 +111,16 @@ MonoBehaviour:
   armExtendDistance: 2
   armExtendSpeed: 10
   collectRange: 3
-  collectAngle: 45
+  collectAngle: 30
   itemLayer:
     serializedVersion: 2
     m_Bits: 8
   heldItem: {fileID: 0}
   storageText: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  projectileLifetime: 3
+  firePoint: {fileID: 0}
 --- !u!114 &-485873491006082142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bd35c614185ea4585abcee17b4e11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   currentOxygen: 0
   drainRate: 5
 --- !u!114 &6797341895319989327

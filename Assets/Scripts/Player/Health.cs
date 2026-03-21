@@ -24,11 +24,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
+    public void ResetHealth()
     {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log(gameObject.name + " healed " + amount + " health! Current health: " + currentHealth);
+        currentHealth = maxHealth;
+        Debug.Log(gameObject.name + " health reset to max: " + maxHealth);  
     }
 
     void Die()

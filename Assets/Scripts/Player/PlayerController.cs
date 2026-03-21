@@ -43,6 +43,15 @@ public class PlayerController : MonoBehaviour
     private ShopUIController shopUI;
     private ShopSystem shopSystem;
 
+    [Header("Torpedo Shooting")]
+    public GameObject projectilePrefab;
+    private int damageAmount;
+    public float projectileSpeed = 10f;
+    public float projectileLifetime = 3f;
+    public Transform firePoint;
+    public float fireRate = 0.5f;
+    private float nextFireTime = 0f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,6 +60,15 @@ public class PlayerController : MonoBehaviour
         if (armTransform != null)
         {
             armStartPos = armTransform.localPosition;
+        }
+
+        // Create fire point if not assigned
+        if (firePoint == null)
+        {
+            GameObject fp = new GameObject("FirePoint");
+            fp.transform.parent = transform;
+            fp.transform.localPosition = new Vector3(1f, 0f, 0f);
+            firePoint = fp.transform;
         }
     }
 
@@ -92,9 +110,14 @@ public class PlayerController : MonoBehaviour
             currentState = PlayerState.SpeedBoost;
         }
 
-        if (Input.GetMouseButtonDown(0) && currentState == PlayerState.ArmCollect)
+        if (currentState == PlayerState.ArmCollect && Input.GetMouseButtonDown(0))
         {
             StartArmAction();
+        }
+        if (currentState == PlayerState.TorpedoShoot && (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime))
+        {
+            ShootTorpedo();
+            nextFireTime = Time.time + fireRate;
         }
 
         if (armTransform != null && isExtending)
@@ -239,6 +262,44 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void ShootTorpedo()
+    {
+        if (projectilePrefab == null || firePoint == null)
+        {
+            Debug.LogError("Projectile prefab or fire point not assigned!");
+            return;
+        }
+
+        // Fire towards mouse position
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorld.z = 0f;
+
+        Vector2 aimDirection = (mouseWorld - transform.position).normalized;
+
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+
+        // Rotate projectile to face direction
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        // Get damage from submarine stats
+        damageAmount = GetComponent<SubmarineStats>().GetDamage();
+
+        // Get or add projectile component
+        Torpedo projScript = projectile.GetComponent<Torpedo>();
+
+        if (projScript != null)
+        {
+            projScript.Initialize(aimDirection, projectileSpeed, damageAmount, projectileLifetime);
+        }
+        else
+        {
+            projScript = projectile.AddComponent<Torpedo>();
+            projScript.Initialize(aimDirection, projectileSpeed, damageAmount, projectileLifetime);
+        }
+
+        Debug.Log("Player fired torpedo! Direction: " + aimDirection);
+    }
     private void OnDrawGizmosSelected()
     {
         // Visualize collection range and angle
