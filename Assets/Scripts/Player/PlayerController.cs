@@ -69,11 +69,6 @@ public class PlayerController : MonoBehaviour
         stats = GetComponent<SubmarineStats>();
         shopUI = FindObjectOfType<ShopUIController>();
 
-        GameManager.Instance.Initialize(
-            GetComponent<Inventory>(),
-            GetComponent<PlayerCurrency>()
-        );
-
         if (armTransform != null)
         {
             armStartPos = armTransform.localPosition;
@@ -83,6 +78,14 @@ public class PlayerController : MonoBehaviour
         {
             firePoint = transform; // default to player position if not set
         }
+    }
+
+    void Start()
+    {
+        GameManager.Instance.Initialize(
+            GetComponent<Inventory>(),
+            GetComponent<PlayerCurrency>()
+        );
     }
 
     void Update()
