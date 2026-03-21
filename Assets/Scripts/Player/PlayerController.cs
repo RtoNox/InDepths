@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     [Header("Flashlight")]
     public GameObject flashlight;
     public FlashlightController flashlightController;
-    private bool flashlightOn;
 
     private bool isExtending = false;
     private Vector3 armStartPos;
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Item Collection")]
     public float collectRange = 3f;
-    public float collectAngle = 30f; // cone angle
+    public float collectAngle = 15f; // cone angle
     public LayerMask itemLayer; // Layer for items to collect
 
     private Inventory inventory;
