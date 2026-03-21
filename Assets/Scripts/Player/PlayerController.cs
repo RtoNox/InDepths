@@ -55,6 +55,15 @@ public class PlayerController : MonoBehaviour
     private float nextFireTime = 0f;
     public int torpedoesRemaining = 10;
 
+    [Header("Emergency Resurfacer")]
+    public float resurfacerChargeTime = 3f;
+    public float resurfacerForce = 30f;
+
+    private bool isChargingResurfacer = false;
+    private float resurfacerTimer = 0f;
+    private bool isResurfacing = false;
+    private bool resurfacerUsed = false;
+
     [Header("Game UI")]
     public TextMeshProUGUI storageText;
     public TextMeshProUGUI torpedoText;
@@ -180,10 +189,54 @@ public class PlayerController : MonoBehaviour
                 flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop
             }
         }
+
+        // Start charging Emergency Resurfacer
+        if (Input.GetKeyDown(KeyCode.R) && !isChargingResurfacer && !isResurfacing)
+        {
+            if (resurfacerUsed)
+            {
+                Debug.Log("Emergency Resurfacer can only be used once per dive!");
+                return;
+            }
+
+            StartResurfacer();
+            Debug.Log("Started charging Emergency Resurfacer...");
+        }
+
+        if (isChargingResurfacer)
+        {
+            if (movement.x != 0 || movement.y != 0)
+            {
+                CancelResurfacer();
+            }
+
+            resurfacerTimer += Time.deltaTime;
+
+            if (resurfacerTimer >= resurfacerChargeTime)
+            {
+                LaunchResurfacer();
+            }
+        }
     }
 
     void FixedUpdate()
     {
+        if (isResurfacing)
+        {
+            // Stop resurfacing when reaching surface
+            if (transform.position.y >= 0f)
+            {
+                isResurfacing = false;
+
+                // Clamp position exactly to surface
+                transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+
+                rb.velocity = Vector2.zero;
+            }
+
+            return;
+        }
+
         if (currentState == PlayerState.SpeedBoost)
         {
             moveSpeed = stats.GetSpeed();
@@ -353,6 +406,33 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player fired torpedo! Direction: " + aimDirection);
     }
 
+    void StartResurfacer()
+    {
+        isChargingResurfacer = true;
+        resurfacerTimer = 0f;
+
+        // Stop movement instantly
+        rb.velocity = Vector2.zero;
+    }
+
+    public void CancelResurfacer()
+    {
+        if (isChargingResurfacer)
+        {
+            isChargingResurfacer = false;
+            resurfacerTimer = 0f;
+            Debug.Log("Emergency Resurfacer charge cancelled.");
+        }
+    }
+
+    void LaunchResurfacer()
+    {
+        isChargingResurfacer = false;
+        isResurfacing = true;
+
+        // Launch straight upward
+        rb.velocity = new Vector2(0f, resurfacerForce);
+    }
     private void OnDrawGizmosSelected()
     {
         // Visualize collection range and angle
