@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 30
+        width: 50
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f83da6aa2003a548b762411478c9bdd
+      internalID: -2065478786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 39
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6cb919d6d6e5b45a752e1e99d64358
+      internalID: -335893084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 51
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1209dab96c4a9684682b4db6f887eccf
+      internalID: 2114274010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 53
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c95ba96fef4c9e4ca7f0fe0faf93364
+      internalID: -1819336229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 51
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdad0753a5821f84dbdbf89ffb7a0759
+      internalID: 970138519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radar Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 39
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42b4659ab2ecc94899b468fd05deeb2
+      internalID: 87666809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +232,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Radar Animation-Sheet_0: -2065478786
+      Radar Animation-Sheet_1: -335893084
+      Radar Animation-Sheet_2: 2114274010
+      Radar Animation-Sheet_3: -1819336229
+      Radar Animation-Sheet_4: 970138519
+      Radar Animation-Sheet_5: 87666809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

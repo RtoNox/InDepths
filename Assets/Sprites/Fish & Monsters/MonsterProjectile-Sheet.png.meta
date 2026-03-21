@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 15
+        width: 119
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc1451f022930748b0a20f89067cf40
+      internalID: -1407421948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 21
+        width: 144
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc43ada99bef0040b3be6ebbe72182d
+      internalID: 951792447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 37
+        width: 144
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38f41f3fb445a04e8a416e2c998a0f0
+      internalID: 531038582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 55
+        width: 158
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebd6ae73eb19f247ae03fe59a4cf8e5
+      internalID: 2028073072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 55
+        width: 159
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6172b2962bf5c45acdf49d1b0b732d
+      internalID: 33039087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 55
+        width: 159
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0e3d716211010468f356a3e9f17303
+      internalID: 1676275739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 55
+        width: 158
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a7f10b5faf0a54ba8e9afbec2fd78c
+      internalID: 1153683942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 55
+        width: 158
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648163a8bcd9c174f8f1e4d7cd11a756
+      internalID: 1392037610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 55
+        width: 159
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad79cb7314833a4468cc11ce981dff0c
+      internalID: -1537055372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 55
+        width: 159
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208f79433aed95d46b6d44364f89207f
+      internalID: -176116413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 55
+        width: 158
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1eb1757ba947d4493fe045a288cfd5
+      internalID: -393646207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 55
+        width: 159
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c544ffb2dbb66784fa508cc724e7448b
+      internalID: 863315720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 55
+        width: 159
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e8c957c80f56a429d4497564ffe168
+      internalID: -1138093008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterProjectile-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 55
+        width: 158
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37647b2b61c92834e954e494dd0a8fe0
+      internalID: 1783066986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +400,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MonsterProjectile-Sheet_0: -1407421948
+      MonsterProjectile-Sheet_1: 951792447
+      MonsterProjectile-Sheet_10: -393646207
+      MonsterProjectile-Sheet_11: 863315720
+      MonsterProjectile-Sheet_12: -1138093008
+      MonsterProjectile-Sheet_13: 1783066986
+      MonsterProjectile-Sheet_2: 531038582
+      MonsterProjectile-Sheet_3: 2028073072
+      MonsterProjectile-Sheet_4: 33039087
+      MonsterProjectile-Sheet_5: 1676275739
+      MonsterProjectile-Sheet_6: 1153683942
+      MonsterProjectile-Sheet_7: 1392037610
+      MonsterProjectile-Sheet_8: -1537055372
+      MonsterProjectile-Sheet_9: -176116413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 4
+        width: 328
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55002ca99701c149b87ce6c84818f2e
+      internalID: -1465224032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 4
+        width: 337
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1574ee0c6118043bc6e9ec20824740
+      internalID: -919861708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 4
+        width: 349
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6512bb90a761c744598bd9bfc4b97596
+      internalID: 460578945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 4
+        width: 346
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50473f05cf302dd4d930d5ea289c9fdf
+      internalID: -1582584138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 4
+        width: 343
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae997dda0c1ce0d4ea686d11f17c51dc
+      internalID: -1656144869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2622
+        y: 4
+        width: 344
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fffd6a4f5785a449f5cc1e32990975
+      internalID: 1111342789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 4
+        width: 341
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f39ab21aa972bc4fbfe2bd792ad707b
+      internalID: -1755061203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 4
+        width: 340
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4a0c2d1674e174a9c69ecbee47eb64
+      internalID: -1708955021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4165
+        y: 4
+        width: 338
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4fc653909a34c41ac61f63d016c193
+      internalID: 406479797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4671
+        y: 4
+        width: 344
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275c62168fc972f4f82c748ed049f581
+      internalID: -1912741940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sub Level 3 Animation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 4
+        width: 341
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae8e22d141021d428cb1be4436c26b1
+      internalID: 1187389188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +337,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sub Level 3 Animation-Sheet_0: -1465224032
+      Sub Level 3 Animation-Sheet_1: -919861708
+      Sub Level 3 Animation-Sheet_10: 1187389188
+      Sub Level 3 Animation-Sheet_2: 460578945
+      Sub Level 3 Animation-Sheet_3: -1582584138
+      Sub Level 3 Animation-Sheet_4: -1656144869
+      Sub Level 3 Animation-Sheet_5: 1111342789
+      Sub Level 3 Animation-Sheet_6: -1755061203
+      Sub Level 3 Animation-Sheet_7: -1708955021
+      Sub Level 3 Animation-Sheet_8: 406479797
+      Sub Level 3 Animation-Sheet_9: -1912741940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

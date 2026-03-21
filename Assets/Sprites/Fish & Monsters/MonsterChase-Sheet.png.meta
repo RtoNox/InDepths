@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MonsterChase-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 42
+        width: 259
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0489b4e5cddb0df4ba1bd2ce5d62fd5b
+      internalID: 482517710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterChase-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 42
+        width: 254
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733e6c6f0e1bf4a4194101ccc9ca0772
+      internalID: -66496454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterChase-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 42
+        width: 246
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715e947f1a6f459479c235ce9e5da2f3
+      internalID: 1622377592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MonsterChase-Sheet_0: 482517710
+      MonsterChase-Sheet_1: -66496454
+      MonsterChase-Sheet_2: 1622377592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

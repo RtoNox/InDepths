@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MonsterKamikaze-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 43
+        width: 89
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8157fbddde2d44984656a109113e07
+      internalID: 1020611207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterKamikaze-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 43
+        width: 86
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597d99a4cd345c14eb2fed422347f0ae
+      internalID: -611075367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterKamikaze-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 43
+        width: 86
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4721a89fcf23641a3822e8c0560ff9
+      internalID: 1257559658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterKamikaze-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 43
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9d9cdfc8c024049aa5dcbe43aac7f6
+      internalID: 1886086395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MonsterKamikaze-Sheet_0: 1020611207
+      MonsterKamikaze-Sheet_1: -611075367
+      MonsterKamikaze-Sheet_2: 1257559658
+      MonsterKamikaze-Sheet_3: 1886086395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

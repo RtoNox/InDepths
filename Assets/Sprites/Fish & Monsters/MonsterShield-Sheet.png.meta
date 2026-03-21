@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 49
+        width: 384
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a8780ee57674548b5aa743ad16a8a8
+      internalID: -407229562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 59
+        width: 445
+        height: 586
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab98b71b9505c247918bdaeec0cbf56
+      internalID: -1576533415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 0
+        width: 498
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1328f538bc0e63346ba8ebbc38f4e736
+      internalID: -1291362837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2438
+        y: 0
+        width: 500
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c516a4dcf67ebc49b74e38051566012
+      internalID: 1969798075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 0
+        width: 496
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dac29dbe06ac1d49a0470dc611060ca
+      internalID: 1912132723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3974
+        y: 0
+        width: 500
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f389a9d1b713b4ea42f1b0b3b32e99
+      internalID: 1968942632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 4744
+        y: 0
+        width: 498
+        height: 645
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c8077166faa2d448a8eee8bca346ac
+      internalID: -1836369404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 5456
+        y: 0
+        width: 607
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c55c4d956206be42a4e20d13075359e
+      internalID: 255312829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterShield-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 6225
+        y: 0
+        width: 607
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdaf26601c342e949a631a7861982c8e
+      internalID: -1936078795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +295,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MonsterShield-Sheet_0: -407229562
+      MonsterShield-Sheet_1: -1576533415
+      MonsterShield-Sheet_10: -1950840591
+      MonsterShield-Sheet_11: -1836369404
+      MonsterShield-Sheet_12: 361456073
+      MonsterShield-Sheet_13: 255312829
+      MonsterShield-Sheet_14: -1936078795
+      MonsterShield-Sheet_2: -1291362837
+      MonsterShield-Sheet_3: 1969798075
+      MonsterShield-Sheet_4: -1510564242
+      MonsterShield-Sheet_5: 1912132723
+      MonsterShield-Sheet_6: -1304850039
+      MonsterShield-Sheet_7: -1604938938
+      MonsterShield-Sheet_8: 1968942632
+      MonsterShield-Sheet_9: 1000445749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
