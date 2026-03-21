@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
     [Header("Game UI")]
     public TextMeshProUGUI storageText;
 
-    [Header("Shop UI")]
-    private ShopUIController shopUI;
-    private ShopSystem shopSystem;
+    [Header("Shop")]
+    public ShopUIController shopUI;
+    public ShopSystem shopSystem;
 
     [Header("Torpedo Shooting")]
     public GameObject projectilePrefab;
@@ -59,6 +59,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<SubmarineStats>();
+
+        shopSystem.Initialize(
+            GetComponent<Inventory>(),
+            GetComponent<PlayerCurrency>()
+        );
 
         if (armTransform != null)
         {
@@ -221,8 +226,11 @@ public class PlayerController : MonoBehaviour
 
     void TryCollect(Item item)
     {
-        int armStrength = stats.GetArmStrength();
-        if (armStrength < item.weight)
+        if (stats.GetArmStrength() <= item.weight)
+        {
+            Debug.Log("Cannot collect item: " + item.itemName + " is too heavy for your arm strength.");
+            return;
+        }
 
         // PRIORITY 1: Put into storage if possible
         if (inventory.HasSpace())
