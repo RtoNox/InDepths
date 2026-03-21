@@ -795,7 +795,11 @@ PrefabInstance:
       objectReference: {fileID: 1026327154}
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: collectAngle
-      value: 30
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: collectRange
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: projectileSpeed

@@ -177,7 +177,7 @@ MonoBehaviour:
   armExtendSpeed: 10
   flashlight: {fileID: 0}
   collectRange: 3
-  collectAngle: 30
+  collectAngle: 15
   itemLayer:
     serializedVersion: 2
     m_Bits: 8
