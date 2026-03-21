@@ -101,6 +101,11 @@ public class FlashlightController : MonoBehaviour
         light2D.enabled = false;
     }
 
+    public void RefillBattery()
+    {
+        currentBattery = maxBattery;
+    }
+
     public float GetBatteryPercent()
     {
         return currentBattery / maxBattery;

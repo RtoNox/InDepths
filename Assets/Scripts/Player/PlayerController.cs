@@ -54,9 +54,11 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
+    public int torpedoesRemaining = 10;
 
     [Header("Game UI")]
     public TextMeshProUGUI storageText;
+    public TextMeshProUGUI torpedoText;
 
     [Header("Shop")]
     public ShopUIController shopUI;
@@ -121,7 +123,9 @@ public class PlayerController : MonoBehaviour
             flashlight.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         }
 
+        // Update Game UI
         UpdateStorageUI();
+        torpedoText.text = "Torpedoes: " + torpedoesRemaining;
 
         if (Input.GetKeyDown("1"))
         {
@@ -140,8 +144,15 @@ public class PlayerController : MonoBehaviour
         {
             StartArmAction();
         }
+
         if (currentState == PlayerState.TorpedoShoot && (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime))
         {
+            if (torpedoesRemaining <= 0)
+            {
+                Debug.Log("No torpedoes remaining! Return to base to resupply.");
+                return;
+            }
+
             ShootTorpedo();
             nextFireTime = Time.time + fireRate;
         }
@@ -162,12 +173,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (transform.position.y >= 0f)
+        if (transform.position.y >= -0.2f)
         {
             if (Input.GetKeyDown(KeyCode.F) && !shopUI.IsOpen())
             {
                 shopSystem.SellItems(); // SELL FIRST
                 shopUI.OpenShop();
+                torpedoesRemaining = 10; // Resupply torpedoes when visiting shop
+                flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop
             }
         }
     }
@@ -339,6 +352,7 @@ public class PlayerController : MonoBehaviour
             projScript.Initialize(aimDirection, projectileSpeed, damageAmount, projectileLifetime);
         }
 
+        torpedoesRemaining--;
         Debug.Log("Player fired torpedo! Direction: " + aimDirection);
     }
 
