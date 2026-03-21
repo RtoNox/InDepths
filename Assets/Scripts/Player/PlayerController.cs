@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<SubmarineStats>();
+        shopSystem = FindObjectOfType<ShopSystem>();
+        shopUI = FindObjectOfType<ShopUIController>();
 
         shopSystem.Initialize(
             GetComponent<Inventory>(),
