@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8637483852784033610, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: storageLevel

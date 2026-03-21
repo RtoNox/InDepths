@@ -27,6 +27,7 @@ public class FlashlightController : MonoBehaviour
         if (stats == null)
             stats = GetComponent<SubmarineStats>();
 
+        light2D.enabled = false;
         maxBattery = stats.GetFlashlightBatteryCapacity();
         currentBattery = maxBattery;
     }
