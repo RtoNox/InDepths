@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     public float maxDepthY = -100f;
 
     [Header("Colors")]
-    public Color surfaceColor = new Color(0.2f, 0.6f, 0.8f); // light blue
+    public Color surfaceColor = new Color(0f, 0.03f, 0.3f); // navy blue
     public Color deepColor = Color.black;
 
     public Color surfaceLightColor = Color.white;
