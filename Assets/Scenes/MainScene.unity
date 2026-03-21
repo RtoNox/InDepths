@@ -690,6 +690,13 @@ MonoBehaviour:
   player: {fileID: 318353771}
   maxDistance: 3
   offsetSmoothSpeed: 1
+  globalLight: {fileID: 972554477}
+  surfaceY: 0
+  maxDepthY: -1000
+  surfaceColor: {r: 0, g: 0.023529412, b: 0.3137255, a: 1}
+  deepColor: {r: 0, g: 0, b: 0, a: 1}
+  surfaceLightColor: {r: 1, g: 1, b: 1, a: 1}
+  deepLightColor: {r: 0.05, g: 0.05, b: 0.1, a: 1}
 --- !u!114 &765525802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,8 +1194,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.19245279, g: 0.19245279, b: 0.19245279, a: 1}
-  m_Intensity: 0.2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
