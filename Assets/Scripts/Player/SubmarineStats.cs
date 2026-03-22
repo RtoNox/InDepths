@@ -16,7 +16,7 @@ public class SubmarineStats : MonoBehaviour
     [Header("Base Values")]
     public int baseDamage = 20;
     public int baseAmmo = 10;
-    public float baseSpeed = 8f;
+    public float baseSpeed = 6f;
     public int baseHealth = 100;
     public float baseOxygen = 100f;
     public float baseSafeDepth = 100f; // depth before pressure damage starts
@@ -37,7 +37,7 @@ public class SubmarineStats : MonoBehaviour
 
     public float GetSpeed()
     {
-        return baseSpeed + (speedLevel * 1f);
+        return baseSpeed + (speedLevel * 0.2f);
     }
 
     public int GetMaxHealth()
