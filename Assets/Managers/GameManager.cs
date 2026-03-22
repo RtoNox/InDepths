@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false;
     public bool hasWon = false;
 
+    [Header("Boss Settings")]
+    public bool isBossFightActive = false;
+    public GameObject bossPrefab;
+
+    public Vector2 bossSpawnMin;
+    public Vector2 bossSpawnMax;
+
     [Header("Day Results UI")]
     public TextMeshProUGUI dayCompleted;
     public TextMeshProUGUI moneyEarned;
@@ -62,6 +69,7 @@ public class GameManager : MonoBehaviour
     public void EndDay()
     {
         CheckWinCondition();
+        DespawnAllEntities();
 
         int itemCount = 0;
 
@@ -88,6 +96,12 @@ public class GameManager : MonoBehaviour
         moneyEarned.text = "";
         currentDay++;
 
+        if (currentDay % 5 == 0)
+        {
+            float previousDebt = debt;
+            debt = Mathf.RoundToInt(debt * 1.0001f);
+        }
+
         // Reset daily tracker
         moneyEarnedToday = 0;
     }
@@ -104,10 +118,73 @@ public class GameManager : MonoBehaviour
         CheckWinCondition();
     }
 
+    // === DESPAWN SYSTEM ===
+    public void DespawnAllEntities()
+    {
+        Spawnable[] entities = FindObjectsOfType<Spawnable>();
+
+        foreach (Spawnable obj in entities)
+        {
+            Destroy(obj.gameObject);
+        }
+
+        Debug.Log("All entities have been despawned.");
+    }
+
+    public void DisableAllSpawners()
+    {
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+
+        foreach (GameObject spawner in spawners)
+        {
+            spawner.SetActive(false);
+        }
+
+        Debug.Log("All spawners disabled.");
+    }
+
+    // === BOSS FIGHT SYSTEM ===
+    public void StartBossFight()
+    {
+        if (isBossFightActive) return;
+
+        isBossFightActive = true;
+
+        Debug.Log("Boss Fight Started!");
+
+        // 1. Despawn all enemies
+        DespawnAllEntities();
+
+        // 2. Disable all spawners
+        DisableAllSpawners();
+
+        // 3. Spawn the boss
+        SpawnBoss();
+    }
+
+    public void SpawnBoss()
+    {
+        float randomX = Random.Range(bossSpawnMin.x, bossSpawnMax.x);
+        float randomY = Random.Range(bossSpawnMin.y, bossSpawnMax.y);
+
+        Vector2 spawnPos = new Vector2(randomX, randomY);
+
+        Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+
+        Debug.Log("Boss spawned at: " + spawnPos);
+    }
+
     // === DEATH SYSTEM ===
     public void OnPlayerDeath()
     {
+        if (isBossFightActive)
+        {
+            TriggerBadEnding();
+            return;
+        }
+
         inventory.ResetInventory();
+        DespawnAllEntities();
 
         Debug.Log("Player died. Restarting day " + currentDay);
     }
@@ -120,6 +197,14 @@ public class GameManager : MonoBehaviour
             hasWon = true;
             Debug.Log("You Win!");
         }
+    }
+
+    // === BAD ENDING TRIGGER ===
+    public void TriggerBadEnding()
+    {
+        isGameOver = true;
+
+        Debug.Log("Bad Ending...");
     }
 
     // === TRUE ENDING TRIGGER ===
