@@ -254,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 40
   currentHealth: 0
+  isBoss: 0
 --- !u!95 &-6362748226376343700
 Animator:
   serializedVersion: 5

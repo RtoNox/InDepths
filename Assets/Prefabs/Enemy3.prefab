@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7044420582456481056}
   - component: {fileID: -7637109918452022213}
   - component: {fileID: -3063168628230250169}
-  - component: {fileID: 4663811218890349299}
+  - component: {fileID: 4514959001896402179}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -182,7 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
---- !u!95 &4663811218890349299
+  isBoss: 0
+--- !u!95 &4514959001896402179
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
