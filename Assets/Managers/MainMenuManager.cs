@@ -53,7 +53,9 @@ public class MainMenuManager : MonoBehaviour
     {
         PlayClickSound();
         Debug.Log("Opening save/load menu...");
-        
+        // Testing to see if anything goes wrong when loading main scene 
+        SceneManager.LoadScene("MainScene");
+
         if (mainMenuCanvas != null)
             mainMenuCanvas.SetActive(false);
         
