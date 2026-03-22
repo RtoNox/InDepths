@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
+    public bool isBoss = false;
 
     private LootDrop lootDrop;
 
@@ -41,6 +42,11 @@ public class EnemyHealth : MonoBehaviour
         if (lootDrop != null)
         {
             lootDrop.DropLoot();
+        }
+
+        if (isBoss)
+        {
+            GameManager.Instance.OnBossDefeated();
         }
     }
 }

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     [Header("Boss Settings")]
     public bool isBossFightActive = false;
     public GameObject bossPrefab;
+    private GameObject bossInstance;
+    public bool isBossAlive = false;
 
     public Vector2 bossSpawnMin;
     public Vector2 bossSpawnMax;
@@ -121,9 +123,9 @@ public class GameManager : MonoBehaviour
     // === DESPAWN SYSTEM ===
     public void DespawnAllEntities()
     {
-        Spawnable[] entities = FindObjectsOfType<Spawnable>();
+        DespawnObject[] entities = FindObjectsOfType<DespawnObject>();
 
-        foreach (Spawnable obj in entities)
+        foreach (DespawnObject obj in entities)
         {
             Destroy(obj.gameObject);
         }
@@ -169,9 +171,31 @@ public class GameManager : MonoBehaviour
 
         Vector2 spawnPos = new Vector2(randomX, randomY);
 
-        Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+        bossInstance = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+
+        isBossAlive = true;
 
         Debug.Log("Boss spawned at: " + spawnPos);
+    }
+
+    public void OnBossDefeated()
+    {
+        isBossAlive = false;
+        isBossFightActive = false;
+
+        Debug.Log("Boss defeated!");
+
+        EndBossFight();
+    }
+
+    public void EndBossFight()
+    {
+        Debug.Log("Boss fight ended. Player can leave.");
+
+        // Optional: re-enable spawners if you want post-game roaming
+        // EnableAllSpawners();
+
+        TrueEnding(); // or trigger your ending logic here
     }
 
     // === DEATH SYSTEM ===

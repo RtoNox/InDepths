@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 5f;
     public float drag = 4f;
 
-    [Header("Buoyancy")]
+    [Header("Map Borders")]
     public float surfaceY = 0f; // y = 0 is water surface
     public float maxDepthY = -10000f; // max depth player can go
+    public float bossArenaY = -8000f; // y position of boss arena entrance
+
+    [Header("Buoyancy")]
     public float buoyancyForce = 15f;
     public float surfaceDamping = 4f;
     public float waveStrength = 0.3f;
@@ -274,6 +277,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (GameManager.Instance.isBossFightActive && GameManager.Instance.isBossAlive)
+        {
+            if (transform.position.y > bossArenaY)
+            {
+                Vector3 pos = transform.position;
+                pos.y = bossArenaY;
+                transform.position = pos;
+
+                // Optional: stop upward velocity
+                rb.velocity = new Vector2(rb.velocity.x, Mathf.Min(rb.velocity.y, 0));
+            }
+        }
+
         if (transform.position.y >= surfaceY)
         {
             HandleBuoyancy();
@@ -282,7 +298,7 @@ public class PlayerController : MonoBehaviour
         {
             // Prevent going too deep
             transform.position = new Vector3(transform.position.x, maxDepthY, transform.position.z);
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Min(rb.velocity.y, 0));
         }
     }
 
