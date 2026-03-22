@@ -366,7 +366,7 @@ MonoBehaviour:
   maxBounds: 0
   spawnInterval: 5
   maxCount: 15
-  player: {fileID: 0}
+  player: {fileID: 318353771}
 --- !u!1 &64430328
 GameObject:
   m_ObjectHideFlags: 0
