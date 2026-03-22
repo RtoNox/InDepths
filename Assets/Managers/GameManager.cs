@@ -7,15 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Day System")]
-    public int currentDay = 1;
-
     [Header("Player Data")]
+    public int currentDay = 1;
     private Inventory inventory;
     private PlayerCurrency currency;
     public int debt = 10000000;
-
-    [Header("Run Data")]
     public int moneyEarnedToday = 0;
 
     [Header("Game State")]
@@ -196,11 +192,6 @@ public class GameManager : MonoBehaviour
     public void EndBossFight()
     {
         Debug.Log("Boss fight ended. Player can leave.");
-
-        // Optional: re-enable spawners if you want post-game roaming
-        // EnableAllSpawners();
-
-        TrueEnding(); // or trigger your ending logic here
     }
 
     // === DEATH SYSTEM ===
