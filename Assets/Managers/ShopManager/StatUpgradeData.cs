@@ -38,8 +38,8 @@ public class StatUpgradeData
         // FORMULA:
         // current cost + starting cost * multiplier% * level
 
-        float cost = startingCost;
-
-        return Mathf.RoundToInt(startingCost * (1 + costMultiplierPercent * currentLevel * currentLevel));
+        return Mathf.RoundToInt(
+            startingCost * (1 + costMultiplierPercent * currentLevel * currentLevel)
+        );
     }
 }
