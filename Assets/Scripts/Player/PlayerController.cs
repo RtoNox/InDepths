@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
     private int damageAmount;
     public float projectileSpeed = 10f;
     public float projectileLifetime = 3f;
+
     public Transform firePoint;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
@@ -110,7 +111,8 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.Initialize(
             GetComponent<Inventory>(),
-            GetComponent<PlayerCurrency>()
+            GetComponent<PlayerCurrency>(),
+            GetComponent<SubmarineStats>()
         );
     }
 

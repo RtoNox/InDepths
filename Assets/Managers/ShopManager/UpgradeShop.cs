@@ -13,8 +13,10 @@ public class UpgradeShop : MonoBehaviour
 
     void Awake()
     {
-        currency = GetComponent<PlayerCurrency>();
-        stats = GetComponent<SubmarineStats>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        currency = player.GetComponent<PlayerCurrency>();
+        stats = player.GetComponent<SubmarineStats>();
 
         upgradeDataDict = new Dictionary<string, StatUpgradeData>();
 

@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Data")]
     public int currentDay = 1;
-    private Inventory inventory;
-    private PlayerCurrency currency;
+    public Inventory inventory;
+    public PlayerCurrency currency;
+    public SubmarineStats submarineStats;
     public int debt = 10000000;
     public int moneyEarnedToday = 0;
 
@@ -46,19 +47,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Initialize(Inventory inv, PlayerCurrency curr)
+    public void Initialize(Inventory inv, PlayerCurrency curr, SubmarineStats stats)
     {
         inventory = inv;
         currency = curr;
+        submarineStats = stats;
     }
 
     public void SellItems()
     {
         int totalValue = 0;
 
-        foreach (Item item in inventory.items)
+        if (inventory != null)
         {
-            totalValue += item.value;
+            foreach (Item item in inventory.items)
+            {
+                totalValue += item.value;
+            }
         }
 
         moneyEarnedToday = totalValue;
@@ -76,9 +81,12 @@ public class GameManager : MonoBehaviour
 
         int itemCount = 0;
 
-        foreach (Item item in inventory.items)
+        if (inventory != null)
         {
-            itemCount++;
+            foreach (Item item in inventory.items)
+            {
+                itemCount++;
+            }
         }
 
         dayCompleted.text = "Day " + currentDay + " Completed!";

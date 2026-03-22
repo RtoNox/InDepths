@@ -39,7 +39,7 @@ public class StatUpgradeData
         // current cost + starting cost * multiplier% * level
 
         return Mathf.RoundToInt(
-            startingCost * (1 + costMultiplierPercent * currentLevel * currentLevel)
+            startingCost * (1 + costMultiplierPercent * currentLevel)
         );
     }
 }
