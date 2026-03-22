@@ -37,7 +37,7 @@ public class SubmarineStats : MonoBehaviour
 
     public float GetSpeed()
     {
-        return baseSpeed + (speedLevel * 0.2f);
+        return baseSpeed + (speedLevel * 0.1f);
     }
 
     public int GetMaxHealth()

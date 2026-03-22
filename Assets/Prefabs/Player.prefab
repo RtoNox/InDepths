@@ -176,6 +176,7 @@ MonoBehaviour:
   drag: 4
   surfaceY: 0
   maxDepthY: -10000
+  bossArenaY: -8000
   buoyancyForce: 15
   surfaceDamping: 4
   waveStrength: 0.3
@@ -272,7 +273,7 @@ MonoBehaviour:
   storageLevel: 0
   baseDamage: 20
   baseAmmo: 10
-  baseSpeed: 5
+  baseSpeed: 6
   baseHealth: 100
   baseOxygen: 100
   baseSafeDepth: 100
