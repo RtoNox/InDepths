@@ -11,7 +11,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private GameObject settingsCanvas;
     [SerializeField] private GameObject mainMenuCanvas;
-    [SerializeField] private GameObject SaveLoadCanvas;
     void Start()
     {
         Cursor.visible = true;
@@ -24,11 +23,9 @@ public class MainMenuManager : MonoBehaviour
         if (settingsCanvas != null)
             settingsCanvas.SetActive(false);
         
-        if (SaveLoadCanvas != null)
-            SaveLoadCanvas.SetActive(false);
         
         if (startButton != null)
-            startButton.onClick.AddListener(OpenSaveLoadMenu);
+            startButton.onClick.AddListener(StartGame);
         
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(OpenSettings);
@@ -37,17 +34,6 @@ public class MainMenuManager : MonoBehaviour
             exitButton.onClick.AddListener(ExitGame);
     }
 
-    void OpenSaveLoadMenu()
-    {
-        PlayClickSound();
-        Debug.Log("Opening save/load menu...");
-        
-        if (mainMenuCanvas != null)
-            mainMenuCanvas.SetActive(false);
-        
-        if (settingsCanvas != null)
-            SaveLoadCanvas.SetActive(true);
-    }
     
     void StartGame()
     {
