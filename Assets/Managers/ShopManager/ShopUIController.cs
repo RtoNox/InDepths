@@ -7,6 +7,13 @@ public class ShopUIController : MonoBehaviour
 
     private bool isOpen = false;
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CloseShop();
+        }
+    }
     public void OpenShop()
     {
         shopUI.SetActive(true);

@@ -6040,7 +6040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1302795346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9897,6 +9897,24 @@ MonoBehaviour:
     startingCost: 500
     costMultiplierPercent: 0.2
     customCosts: 
+  - statName: FlashlightStrength
+    maxLevel: 30
+    upgradeType: 0
+    startingCost: 1000
+    costMultiplierPercent: 0.1
+    customCosts: 
+  - statName: FlashlightBattery
+    maxLevel: 200
+    upgradeType: 0
+    startingCost: 100
+    costMultiplierPercent: 0.01
+    customCosts: 
+  - statName: Storage
+    maxLevel: 5
+    upgradeType: 1
+    startingCost: 1000
+    costMultiplierPercent: 0
+    customCosts: e803000088130000a861000048e8010020a10700
 --- !u!114 &2079792689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9987,7 +10005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2131899265
 RectTransform:
   m_ObjectHideFlags: 0
