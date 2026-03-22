@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (shopUI != null && shopUI.IsOpen())
+        if (Time.timeScale == 0f)
             return;
 
         // Get input (WASD)
