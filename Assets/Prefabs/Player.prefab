@@ -111,7 +111,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -174,6 +174,15 @@ MonoBehaviour:
   moveSpeed: 5
   acceleration: 5
   drag: 4
+  surfaceY: 0
+  maxDepthY: -10000
+  buoyancyForce: 15
+  surfaceDamping: 4
+  waveStrength: 0.3
+  waveSpeed: 2
+  waterSurfaceY: 0
+  normalGravity: 0.1
+  airGravity: 3
   armTransform: {fileID: 0}
   armExtendDistance: 2
   armExtendSpeed: 10
@@ -190,9 +199,12 @@ MonoBehaviour:
   projectileLifetime: 3
   firePoint: {fileID: 4267086988838618773}
   fireRate: 0.5
+  torpedoesRemaining: 10
+  resurfacerChargeTime: 3
+  resurfacerForce: 30
   storageText: {fileID: 0}
+  torpedoText: {fileID: 0}
   shopUI: {fileID: 0}
-  shopSystem: {fileID: 0}
 --- !u!114 &-485873491006082142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4267086988838618773}
   currentOxygen: 0
-  drainRate: 5
+  drainRate: 1
 --- !u!114 &6797341895319989327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  playerController: {fileID: 0}
 --- !u!114 &9203448944132450054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +322,8 @@ MonoBehaviour:
   baseRange: 5
   baseIntensity: 1
   drainRate: 1
+  currentBattery: 0
+  maxBattery: 0
   isOn: 0
 --- !u!1 &6897644095309860077
 GameObject:
@@ -365,7 +380,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: -1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
@@ -462,7 +477,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 30
   m_PointLightOuterAngle: 60
-  m_PointLightInnerRadius: 3
+  m_PointLightInnerRadius: 2
   m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
