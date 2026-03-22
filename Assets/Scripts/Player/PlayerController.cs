@@ -210,6 +210,12 @@ public class PlayerController : MonoBehaviour
         // Start charging Emergency Resurfacer
         if (Input.GetKeyDown(KeyCode.R) && !isChargingResurfacer && !isResurfacing)
         {
+            if (GameManager.Instance.isBossFightActive)
+            {
+                Debug.Log("Emergency Resurfacer cannot be used during boss fights!");
+                return;
+            }
+
             if (resurfacerUsed)
             {
                 Debug.Log("Emergency Resurfacer can only be used once per dive!");
@@ -233,6 +239,11 @@ public class PlayerController : MonoBehaviour
             {
                 LaunchResurfacer();
             }
+        }
+
+        if (isResurfacing && GameManager.Instance.isBossFightActive)
+        {
+            CancelResurfacer();
         }
     }
 
