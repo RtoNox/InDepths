@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8382509713440189481}
   - component: {fileID: 3047756253103857148}
   - component: {fileID: 5620425948314272365}
+  - component: {fileID: -8835567280213160518}
+  - component: {fileID: -2129982097243371608}
   m_Layer: 0
   m_Name: SmallFish
   m_TagString: Untagged
@@ -170,3 +172,35 @@ MonoBehaviour:
   tailWagSpeed: 5
   tailWagAmount: 15
   tailTransform: {fileID: 0}
+--- !u!114 &-8835567280213160518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350881121176153453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f048b9ad79d25bf4d9675debcc2a1b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: SmallFish
+  value: 1000
+  weight: 1
+--- !u!114 &-2129982097243371608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350881121176153453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8589e598e74f89c4890ccace69e310ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDepth: 0
+  maxDepth: 5000
+  baseWeight: 1
+  idealDepth: 10
+  falloff: 50
