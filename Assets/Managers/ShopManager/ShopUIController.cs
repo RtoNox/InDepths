@@ -18,8 +18,8 @@ public class ShopUIController : MonoBehaviour
 
     void Update()
     {
-        //if (!isOpen)
-            //return;
+        if (!isOpen)
+            return;
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
