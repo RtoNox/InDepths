@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         CheckWinCondition();
         DespawnAllEntities();
+        DisableAllSpawners();
 
         int itemCount = 0;
 
@@ -115,6 +116,8 @@ public class GameManager : MonoBehaviour
 
         // Reset daily tracker
         moneyEarnedToday = 0;
+
+        EnableAllSpawners();
     }
 
     // === PAY DEBT ===
@@ -140,6 +143,16 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("All entities have been despawned.");
+    }
+
+    public void EnableAllSpawners()
+    {
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawners)
+        {
+            spawner.SetActive(true);
+        }
+        Debug.Log("All spawners enabled.");
     }
 
     public void DisableAllSpawners()

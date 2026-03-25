@@ -16,8 +16,10 @@ public class UpgradePanelUI : MonoBehaviour
 
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         shop = FindObjectOfType<UpgradeShop>();
-        stats = shop.GetComponent<SubmarineStats>();
+        stats = player.GetComponent<SubmarineStats>();
 
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
 

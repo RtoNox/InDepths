@@ -40,7 +40,6 @@ public class ShopUIController : MonoBehaviour
         shopUI.SetActive(true);
         PlayerHUD.SetActive(false);
         isOpen = true;
-        Time.timeScale = 0f; // pause game (optional but nice)
     }
 
     public void CloseShop()
@@ -48,7 +47,7 @@ public class ShopUIController : MonoBehaviour
         shopUI.SetActive(false);
         PlayerHUD.SetActive(true);
         isOpen = false;
-        Time.timeScale = 1f;
+        GameManager.Instance.StartNewDay();
     }
 
     public bool IsOpen()
