@@ -4066,39 +4066,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: ammoLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: speedLevel
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: baseStorage
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: damageLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: oxygenLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: storageLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: vitalityLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: armStrengthLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: flashlightBatteryLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: flashlightStrengthLevel
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6965,6 +6969,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1314126119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4337932407001483990, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+  m_PrefabInstance: {fileID: 597579281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a009f6de91b42479601f167d8520f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1314126121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+  m_PrefabInstance: {fileID: 597579281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc5ad2d459ef2e40be7d9655ae9dee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1314126125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
@@ -10644,7 +10670,6 @@ GameObject:
   - component: {fileID: 2079792689}
   - component: {fileID: 2079792688}
   - component: {fileID: 2079792692}
-  - component: {fileID: 2079792693}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: Untagged
@@ -10664,6 +10689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151f51f452c15e43b5e66f1b6d578ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currency: {fileID: 1314126119}
+  stats: {fileID: 1314126121}
   upgradeDataList:
   - statName: Damage
     maxLevel: 25
@@ -10781,20 +10808,6 @@ MonoBehaviour:
   baseSafeDepth: 100
   baseFlashlightBattery: 100
   baseStorage: 10
---- !u!114 &2079792693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079792687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a009f6de91b42479601f167d8520f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0
-  moneyText: {fileID: 1549877214}
 --- !u!1 &2131899264
 GameObject:
   m_ObjectHideFlags: 0

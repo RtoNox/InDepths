@@ -416,7 +416,7 @@ public class PlayerController : MonoBehaviour
 
     void TryCollect(Item item)
     {
-        if (stats.GetArmStrength() <= item.weight)
+        if (stats.GetArmStrength() < item.weight)
         {
             Debug.Log("Cannot collect item: " + item.itemName + " is too heavy for your arm strength.");
             return;

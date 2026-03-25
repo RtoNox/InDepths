@@ -278,7 +278,7 @@ MonoBehaviour:
   baseOxygen: 100
   baseSafeDepth: 100
   baseFlashlightBattery: 100
-  baseStorage: 10
+  baseStorage: 50
 --- !u!114 &7209148128614241386
 MonoBehaviour:
   m_ObjectHideFlags: 0

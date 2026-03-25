@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class UpgradeShop : MonoBehaviour
 {
-    private PlayerCurrency currency;
-    private SubmarineStats stats;
+    public PlayerCurrency currency;
+    public SubmarineStats stats;
 
     [Header("Upgrade Data")]
     public List<StatUpgradeData> upgradeDataList;
