@@ -7,11 +7,32 @@ public class ShopUIController : MonoBehaviour
 
     private bool isOpen = false;
 
+    public RectTransform shopPanel;
+
+    [Header("Scroll Settings")]
+    public float scrollSpeed = 500f;
+
+    [Header("Bounds")]
+    public float minX; // left limit
+    public float maxX; // right limit
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        //if (!isOpen)
+            //return;
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll != 0)
         {
-            CloseShop();
+            Vector2 pos = shopPanel.anchoredPosition;
+
+            pos.x -= scroll * scrollSpeed;
+
+            // Clamp so it doesn't go too far
+            pos.x = Mathf.Clamp(pos.x, minX, maxX);
+
+            shopPanel.anchoredPosition = pos;
         }
     }
     public void OpenShop()
