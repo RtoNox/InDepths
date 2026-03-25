@@ -121,6 +121,9 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale == 0f)
             return;
 
+        if (shopUI != null && shopUI.IsOpen())
+            return;
+
         // Get input (WASD)
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

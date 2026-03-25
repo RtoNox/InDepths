@@ -89,11 +89,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        dayCompleted.text = "Day " + currentDay + " Completed!";
-        moneyEarned.text = "Money Earned: $" + moneyEarnedToday;
         itemsSold.text = "Items Sold: " + itemCount;
+        dayCompleted.text = "Day " + currentDay + " Completed!";
 
         SellItems();
+        moneyEarned.text = "Money Earned: $" + moneyEarnedToday;
     }
 
     public void CloseResultsUI()
