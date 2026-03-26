@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerState currentState = PlayerState.SpeedBoost;
 
     private SubmarineStats stats;
+    private Health health;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<SubmarineStats>();
         shopUI = FindObjectOfType<ShopUIController>();
@@ -207,6 +209,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameManager.Instance.EndDay();
                 shopUI.OpenShop();
+                health.ResetHealth(); // Restore health when visiting shop
                 torpedoesRemaining = 10; // Resupply torpedoes when visiting shop
                 flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop
             }
@@ -233,7 +236,7 @@ public class PlayerController : MonoBehaviour
 
         if (isChargingResurfacer)
         {
-            if (movement.x != 0 || movement.y != 0)
+            if (movement.x != 0 || movement.y != 0 || GameManager.Instance.isBossFightActive)
             {
                 CancelResurfacer();
             }
@@ -248,7 +251,7 @@ public class PlayerController : MonoBehaviour
 
         if (isResurfacing && GameManager.Instance.isBossFightActive)
         {
-            CancelResurfacer();
+            isResurfacing = false;
         }
     }
 
@@ -295,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.Instance.isBossFightActive && GameManager.Instance.isBossAlive)
         {
-            if (transform.position.y > bossArenaY)
+            if (Mathf.Abs(transform.position.y) >= bossArenaY)
             {
                 Vector3 pos = transform.position;
                 pos.y = bossArenaY;
@@ -310,7 +313,7 @@ public class PlayerController : MonoBehaviour
         {
             HandleBuoyancy();
         }
-        else if (transform.position.y < maxDepthY)
+        else if (Mathf.Abs(transform.position.y) > maxDepthY)
         {
             // Prevent going too deep
             transform.position = new Vector3(transform.position.x, maxDepthY, transform.position.z);
@@ -347,7 +350,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleBuoyancy()
     {
-        float distanceToSurface = surfaceY - transform.position.y;
+        float distanceToSurface = surfaceY - Mathf.Abs(transform.position.y);
 
         // Apply wave motion (only near surface)
         float waveOffset = Mathf.Sin(Time.time * waveSpeed) * waveStrength;

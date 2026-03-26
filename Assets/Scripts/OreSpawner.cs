@@ -16,11 +16,18 @@ public class OreSpawner : MonoBehaviour
 
     void Start()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+
         InvokeRepeating(nameof(Spawn), 2f, spawnInterval);
     }
 
     void Spawn()
     {
+        if (player == null) return;
+
         if (currentCount >= maxCount) return;
 
         float depth = Mathf.Abs(player.position.y);
