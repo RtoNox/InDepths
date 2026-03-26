@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class FlashlightController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class FlashlightController : MonoBehaviour
 
     [Header("State")]
     public bool isOn = false;
+
+    [Header("UI")]
+    public Image batteryBar;
+    public Color filledColor = Color.green;
+    public Color emptyColor = Color.red;
 
     void Start()
     {
@@ -62,6 +68,8 @@ public class FlashlightController : MonoBehaviour
 
         float strength = stats.GetFlashlightStrength();
         float batteryPercent = currentBattery / maxBattery;
+        batteryBar.fillAmount = batteryPercent;
+        batteryBar.color = Color.Lerp(emptyColor, filledColor, batteryPercent);
 
         // Range scales with upgrades
         light2D.pointLightOuterRadius = baseRange + strength * 2f;

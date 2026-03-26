@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Health : MonoBehaviour
 
     private PlayerController playerController;
     private SubmarineStats stats;
+
+    [Header("UI")]
+    public Image healthBar;
 
     void Start()
     {
@@ -26,6 +30,12 @@ public class Health : MonoBehaviour
         }
 
         UpdateMaxHealth();
+    }
+
+    void Update()
+    {
+        float fill = (float)currentHealth / maxHealth;
+        healthBar.fillAmount = fill;
     }
 
     public void TakeDamage(int amount)

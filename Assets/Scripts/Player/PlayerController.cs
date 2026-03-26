@@ -86,8 +86,7 @@ public class PlayerController : MonoBehaviour
     [Header("Game UI")]
     public TextMeshProUGUI storageText;
     public TextMeshProUGUI torpedoText;
-
-    [Header("Shop")]
+    public GameObject playerHUD;
     public ShopUIController shopUI;
     
     void Awake()
@@ -156,6 +155,12 @@ public class PlayerController : MonoBehaviour
         // Update Game UI
         UpdateStorageUI();
         torpedoText.text = "Torpedoes: " + torpedoesRemaining;
+
+        // Toggle HUD with Tab key
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            playerHUD.SetActive(!playerHUD.activeSelf);
+        }
 
         if (Input.GetKeyDown("1"))
         {

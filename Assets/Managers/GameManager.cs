@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isGameOver = false;
-
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

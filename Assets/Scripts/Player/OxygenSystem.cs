@@ -1,26 +1,34 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenSystem : MonoBehaviour
 {
     public Transform player;
-    public float currentOxygen;
     private SubmarineStats stats;
     private Health health;
 
+    [Header("Oxygen Settings")]
+    public float currentOxygen;
+    private float maxOxygen;
     public float drainRate = 1f;
+
+    [Header("UI")]
+    public Image oxygenBar;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         stats = GetComponent<SubmarineStats>();
         health = GetComponent<Health>();
-
-        currentOxygen = stats.GetMaxOxygen();
+        ResetOxygen();
     }
 
     void Update()
     {
         currentOxygen -= drainRate * Time.deltaTime;
+
+        float fill = (float)currentOxygen / maxOxygen;
+        oxygenBar.fillAmount = fill;
 
         if (currentOxygen <= 0)
         {
@@ -29,12 +37,13 @@ public class OxygenSystem : MonoBehaviour
 
         if (player.position.y >= 0) // above water
         {
-            currentOxygen = stats.GetMaxOxygen();
+            ResetOxygen();
         }
     }
 
     public void ResetOxygen()
     {
-        currentOxygen = stats.GetMaxOxygen();
+        maxOxygen = stats.GetMaxOxygen();
+        currentOxygen = maxOxygen;
     }
 }
