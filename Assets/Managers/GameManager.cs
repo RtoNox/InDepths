@@ -230,7 +230,6 @@ public class GameManager : MonoBehaviour
         }
 
         inventory.ResetInventory();
-        DespawnAllEntities();
 
         Debug.Log("Player died. Restarting day " + currentDay);
 
