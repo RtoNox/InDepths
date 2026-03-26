@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DespawnObject : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
 
     [Header("Despawn Settings")]
     public float despawnDistance = 40f;
