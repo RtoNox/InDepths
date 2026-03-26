@@ -205,6 +205,7 @@ MonoBehaviour:
   resurfacerForce: 30
   storageText: {fileID: 0}
   torpedoText: {fileID: 0}
+  playerHUD: {fileID: 0}
   shopUI: {fileID: 0}
 --- !u!114 &-485873491006082142
 MonoBehaviour:
@@ -219,7 +220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4267086988838618773}
-  damageRate: 5
+  baseTickInterval: 1
+  minTickInterval: 0.1
+  depthScaling: 0.02
 --- !u!114 &-339442312562928432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +238,8 @@ MonoBehaviour:
   player: {fileID: 4267086988838618773}
   currentOxygen: 120
   drainRate: 1
+  damageRate: 1
+  oxygenBar: {fileID: 0}
 --- !u!114 &6797341895319989327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!114 &9203448944132450054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +331,9 @@ MonoBehaviour:
   currentBattery: 60
   maxBattery: 60
   isOn: 0
+  batteryBar: {fileID: 0}
+  filledColor: {r: 0, g: 1, b: 0, a: 1}
+  emptyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &6897644095309860077
 GameObject:
   m_ObjectHideFlags: 0

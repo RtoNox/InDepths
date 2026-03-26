@@ -12,6 +12,9 @@ public class OxygenSystem : MonoBehaviour
     private float maxOxygen;
     public float drainRate = 1f;
 
+    public float damageRate = 1f; // damage tick rate when out of oxygen
+    private float tickTimer;
+
     [Header("UI")]
     public Image oxygenBar;
 
@@ -25,19 +28,30 @@ public class OxygenSystem : MonoBehaviour
 
     void Update()
     {
-        currentOxygen -= drainRate * Time.deltaTime;
+        if (player.position.y < 0) // only drain oxygen underwater
+            currentOxygen -= drainRate * Time.deltaTime;
 
         float fill = (float)currentOxygen / maxOxygen;
         oxygenBar.fillAmount = fill;
 
         if (currentOxygen <= 0)
         {
-            health.TakeDamage(1); // suffocation damage
+            tickTimer -= Time.deltaTime;
+
+            if (tickTimer <= 0f)
+            {
+                health.TakeDamage(1);
+                tickTimer = damageRate;
+            }
         }
 
         if (player.position.y >= 0) // above water
         {
-            ResetOxygen();
+            if (currentOxygen < maxOxygen)
+            {
+                currentOxygen += 0.2f; // replenish oxygen above water
+                Mathf.Clamp(currentOxygen, 0, maxOxygen);
+            }
         }
     }
 

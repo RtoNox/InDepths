@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        resultsPanel.SetActive(true);
         itemsSold.text = "Items Sold: " + itemCount;
         dayCompleted.text = "Day " + currentDay + " Completed!";
 
