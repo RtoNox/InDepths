@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.UIElements;
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI moneyEarned;
     public TextMeshProUGUI itemsSold;
     public GameObject resultsPanel;
+
+    [Header("Game Over UI")]
+    public GameObject gameOverScreen;
+    public GameObject playerHUD;
 
     void Awake()
     {
@@ -215,7 +220,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Boss fight ended. Player can leave.");
     }
 
-    // === DEATH SYSTEM ===
+    // === PLAYER DEATH SYSTEM ===
     public void OnPlayerDeath()
     {
         if (isBossFightActive)
@@ -228,6 +233,33 @@ public class GameManager : MonoBehaviour
         DespawnAllEntities();
 
         Debug.Log("Player died. Restarting day " + currentDay);
+
+        // Show Game Over UI instead of instant reload
+        ShowGameOverUI();
+    }
+
+    void ShowGameOverUI()
+    {
+        isGameOver = true;
+        gameOverScreen.SetActive(true);
+
+        Time.timeScale = 0f; // pause game
+    }
+
+    public void RetryDay()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f; // IMPORTANT reset
+        isGameOver = false;
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     // === WIN CONDITION ===

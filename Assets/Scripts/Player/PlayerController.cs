@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerState currentState = PlayerState.SpeedBoost;
 
     private SubmarineStats stats;
+    private Health health;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<SubmarineStats>();
         shopUI = FindObjectOfType<ShopUIController>();
@@ -207,6 +209,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameManager.Instance.EndDay();
                 shopUI.OpenShop();
+                health.ResetHealth(); // Restore health when visiting shop
                 torpedoesRemaining = 10; // Resupply torpedoes when visiting shop
                 flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop
             }
@@ -233,7 +236,7 @@ public class PlayerController : MonoBehaviour
 
         if (isChargingResurfacer)
         {
-            if (movement.x != 0 || movement.y != 0)
+            if (movement.x != 0 || movement.y != 0 || GameManager.Instance.isBossFightActive)
             {
                 CancelResurfacer();
             }
@@ -248,7 +251,7 @@ public class PlayerController : MonoBehaviour
 
         if (isResurfacing && GameManager.Instance.isBossFightActive)
         {
-            CancelResurfacer();
+            isResurfacing = false;
         }
     }
 

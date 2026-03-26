@@ -3,26 +3,29 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Health Settings")]
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
 
-    public PlayerController playerController;
-
-    void Awake()
-    {
-        currentHealth = maxHealth;
-    }
+    private PlayerController playerController;
+    private SubmarineStats stats;
 
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
+
         if (playerController == null)
         {
-            playerController = GetComponent<PlayerController>();
-            if (playerController == null)
-            {
-                Debug.LogError("PlayerController component not found on Player.");
-            }
+            Debug.LogError("PlayerController not found on Player.");
         }
+
+        stats = GetComponent<SubmarineStats>();
+
+        if (stats == null)
+        {
+            Debug.LogError("SubmarineStats not found on Player.");
+        }
+
+        UpdateMaxHealth();
     }
 
     public void TakeDamage(int amount)
@@ -38,6 +41,15 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void UpdateMaxHealth()
+    {
+        int newMax = stats.GetMaxHealth();
+        maxHealth = newMax;
+
+        Debug.Log("Max Health updated to: " + maxHealth);
+        ResetHealth(); // Reset to new max health
+    }
+
     public void ResetHealth()
     {
         currentHealth = maxHealth;
@@ -46,6 +58,7 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+        GameManager.Instance.OnPlayerDeath();
         Debug.Log("Player died!");
     }
 }

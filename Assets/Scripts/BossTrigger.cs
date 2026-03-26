@@ -22,7 +22,7 @@ public class BossTrigger : MonoBehaviour
             return;
         }
 
-        if (player.transform.position.y <= bossArenaY)
+        if (Mathf.Abs(player.transform.position.y) >= bossArenaY)
         {
             GameManager.Instance.isBossFightActive = true;
             gameObject.SetActive(false);

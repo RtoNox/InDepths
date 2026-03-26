@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 public class UpgradeShop : MonoBehaviour
 {
+    [Header("Player Data")]
     public PlayerCurrency currency;
     public SubmarineStats stats;
+    public Health health;
 
     [Header("Upgrade Data")]
     public List<StatUpgradeData> upgradeDataList;
@@ -17,6 +19,7 @@ public class UpgradeShop : MonoBehaviour
 
         currency = player.GetComponent<PlayerCurrency>();
         stats = player.GetComponent<SubmarineStats>();
+        health = player.GetComponent<Health>();
 
         upgradeDataDict = new Dictionary<string, StatUpgradeData>();
 
@@ -66,6 +69,11 @@ public class UpgradeShop : MonoBehaviour
         {
             stats.UpgradeStat(stat);
             Debug.Log(stat + " upgraded! Cost: " + cost);
+
+            if (stat == "vitality")
+            {
+                health.UpdateMaxHealth();
+            }
         }
         else
         {

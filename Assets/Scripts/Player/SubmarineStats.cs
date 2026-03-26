@@ -42,7 +42,7 @@ public class SubmarineStats : MonoBehaviour
 
     public int GetMaxHealth()
     {
-        return baseHealth + (vitalityLevel * 20);
+        return baseHealth + (vitalityLevel * 5);
     }
 
     public float GetMaxOxygen()
