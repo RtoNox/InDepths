@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4267086988838618773}
-  currentOxygen: 0
+  currentOxygen: 120
   drainRate: 1
 --- !u!114 &6797341895319989327
 MonoBehaviour:
@@ -274,9 +274,9 @@ MonoBehaviour:
   baseAmmo: 10
   baseSpeed: 6
   baseHealth: 100
-  baseOxygen: 100
+  baseOxygen: 120
   baseSafeDepth: 100
-  baseFlashlightBattery: 100
+  baseFlashlightBattery: 60
   baseStorage: 50
 --- !u!114 &7209148128614241386
 MonoBehaviour:
@@ -322,8 +322,8 @@ MonoBehaviour:
   baseRange: 5
   baseIntensity: 1
   drainRate: 1
-  currentBattery: 0
-  maxBattery: 0
+  currentBattery: 60
+  maxBattery: 60
   isOn: 0
 --- !u!1 &6897644095309860077
 GameObject:

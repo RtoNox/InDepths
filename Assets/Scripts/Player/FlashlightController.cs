@@ -104,6 +104,7 @@ public class FlashlightController : MonoBehaviour
     public void RefillBattery()
     {
         currentBattery = maxBattery;
+        Debug.Log("Battery refilled!");
     }
 
     public float GetBatteryPercent()

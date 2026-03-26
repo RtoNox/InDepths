@@ -4053,6 +4053,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: baseOxygen
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: speedLevel
       value: 0
       objectReference: {fileID: 0}
@@ -4079,6 +4083,10 @@ PrefabInstance:
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: armStrengthLevel
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: baseFlashlightBattery
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9203448944132450054, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: flashlightBatteryLevel
