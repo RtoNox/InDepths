@@ -87,7 +87,7 @@ public class FlashlightController : MonoBehaviour
             float dimmed = Mathf.Lerp(0.2f, targetIntensity, batteryPercent / 0.2f);
 
             // Light flicker
-            float flicker = Random.Range(0.6f, 1.2f);
+            float flicker = Random.Range(0.6f, 1f);
 
             light2D.intensity = dimmed * flicker;
         }
