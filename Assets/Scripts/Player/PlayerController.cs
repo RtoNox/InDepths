@@ -298,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.Instance.isBossFightActive && GameManager.Instance.isBossAlive)
         {
-            if (transform.position.y > bossArenaY)
+            if (Mathf.Abs(transform.position.y) >= bossArenaY)
             {
                 Vector3 pos = transform.position;
                 pos.y = bossArenaY;
@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
         {
             HandleBuoyancy();
         }
-        else if (transform.position.y < maxDepthY)
+        else if (Mathf.Abs(transform.position.y) > maxDepthY)
         {
             // Prevent going too deep
             transform.position = new Vector3(transform.position.x, maxDepthY, transform.position.z);
@@ -350,7 +350,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleBuoyancy()
     {
-        float distanceToSurface = surfaceY - transform.position.y;
+        float distanceToSurface = surfaceY - Mathf.Abs(transform.position.y);
 
         // Apply wave motion (only near surface)
         float waveOffset = Mathf.Sin(Time.time * waveSpeed) * waveStrength;

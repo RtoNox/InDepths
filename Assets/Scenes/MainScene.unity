@@ -3993,8 +3993,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2079792689}
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: maxDepthY
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: moveSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: bossArenaY
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 5668598261195215003, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: shopSystem
