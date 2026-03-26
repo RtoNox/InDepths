@@ -242,6 +242,7 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverScreen.SetActive(true);
+        playerHUD.SetActive(false);
 
         Time.timeScale = 0f; // pause game
     }
