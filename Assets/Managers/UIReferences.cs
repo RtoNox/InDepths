@@ -9,6 +9,7 @@ public class UIReferences : MonoBehaviour
     public TextMeshProUGUI moneyEarned;
     public TextMeshProUGUI itemsSold;
     public GameObject resultsPanel;
+    public Button exitResultsButton;
 
     [Header("Game Over UI")]
     public GameObject gameOverScreen;
@@ -30,5 +31,6 @@ public class UIReferences : MonoBehaviour
 
         retryButton.onClick.AddListener(() => gm.RetryDay());
         mainMenuButton.onClick.AddListener(() => gm.LoadMainMenu());
+        exitResultsButton.onClick.AddListener(() => gm.CloseResultsUI());
     }
 }
