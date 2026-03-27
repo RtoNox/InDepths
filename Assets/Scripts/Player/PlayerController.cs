@@ -115,6 +115,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<PlayerCurrency>(),
             GetComponent<SubmarineStats>()
         );
+
+        GameManager.Instance.LoadGame(0); // reload temp data
     }
 
     void Update()

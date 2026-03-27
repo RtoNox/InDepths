@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isGameOver = false;
         
+        SaveGame(0); // temp slot
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -261,6 +262,50 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
 
         SceneManager.LoadScene("MainMenu");
+    }
+
+    // === SAVE/LOAD SYSTEM ===
+    public void SaveGame(int slot)
+    {
+        SaveData data = new SaveData();
+
+        data.currentDay = currentDay;
+        data.money = currency.money;
+        data.debt = debt;
+
+        data.damageLevel = submarineStats.damageLevel;
+        data.ammoLevel = submarineStats.ammoLevel;
+        data.speedLevel = submarineStats.speedLevel;
+        data.vitalityLevel = submarineStats.vitalityLevel;
+        data.oxygenLevel = submarineStats.oxygenLevel;
+        data.armStrengthLevel = submarineStats.armStrengthLevel;
+        data.flashlightStrengthLevel = submarineStats.flashlightStrengthLevel;
+        data.flashlightBatteryLevel = submarineStats.flashlightBatteryLevel;
+        data.storageLevel = submarineStats.storageLevel;
+
+        SaveSystem.SaveGame(data, slot);
+    }
+
+    public void LoadGame(int slot)
+    {
+        SaveData data = SaveSystem.LoadGame(slot);
+
+        if (data == null) return;
+
+        currentDay = data.currentDay;
+        debt = data.debt;
+
+        currency.money = data.money;
+
+        submarineStats.damageLevel = data.damageLevel;
+        submarineStats.ammoLevel = data.ammoLevel;
+        submarineStats.speedLevel = data.speedLevel;
+        submarineStats.vitalityLevel = data.vitalityLevel;
+        submarineStats.oxygenLevel = data.oxygenLevel;
+        submarineStats.armStrengthLevel = data.armStrengthLevel;
+        submarineStats.flashlightStrengthLevel = data.flashlightStrengthLevel;
+        submarineStats.flashlightBatteryLevel = data.flashlightBatteryLevel;
+        submarineStats.storageLevel = data.storageLevel;
     }
 
     // === WIN CONDITION ===
