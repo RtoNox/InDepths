@@ -40,8 +40,9 @@ public class PressureSystem : MonoBehaviour
         if (depth > safeDepth)
         {
             float excessDepth = depth - safeDepth;
+            float maxPressureDepth = (baseTickInterval - minTickInterval) / depthScaling; // depth at which tick rate hits minimum
 
-            float pressureFill =  excessDepth / (safeDepth + 40f);
+            float pressureFill =  excessDepth / maxPressureDepth;
             pressureBar.fillAmount = pressureFill;
 
             // Faster damage tick rate the deeper you go

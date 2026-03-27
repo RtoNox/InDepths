@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f41b7f67b3cce042b30dd507c787a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSaveSlot: 0
   currentDay: 1
   inventory: {fileID: 0}
   currency: {fileID: 0}
@@ -4222,7 +4223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -485873491006082142, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: minTickInterval
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -339442312562928432, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: player

@@ -116,7 +116,11 @@ public class PlayerController : MonoBehaviour
             GetComponent<SubmarineStats>()
         );
 
-        GameManager.Instance.LoadGame(0); // reload temp data
+        // Only load if slot exists
+        if (GameManager.Instance.currentSaveSlot != 0)
+        {
+            GameManager.Instance.LoadGame(GameManager.Instance.currentSaveSlot);
+        }
     }
 
     void Update()

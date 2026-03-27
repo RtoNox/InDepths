@@ -1,7 +1,8 @@
+using JetBrains.Annotations;
+using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using JetBrains.Annotations;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Player Data")]
+    public int currentSaveSlot = 0;
     public int currentDay = 1;
     public Inventory inventory;
     public PlayerCurrency currency;
@@ -101,6 +103,8 @@ public class GameManager : MonoBehaviour
 
         SellItems();
         moneyEarned.text = "Money Earned: $" + moneyEarnedToday;
+
+        SaveGame();
     }
 
     public void CloseResultsUI()
@@ -252,7 +256,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isGameOver = false;
         
-        SaveGame(0); // temp slot
+        SaveGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -265,8 +269,14 @@ public class GameManager : MonoBehaviour
     }
 
     // === SAVE/LOAD SYSTEM ===
-    public void SaveGame(int slot)
+    public void SaveGame()
     {
+        if (currentSaveSlot == 0)
+        {
+            Debug.Log("No save slot selected!");
+            return;
+        }
+
         SaveData data = new SaveData();
 
         data.currentDay = currentDay;
@@ -283,7 +293,7 @@ public class GameManager : MonoBehaviour
         data.flashlightBatteryLevel = submarineStats.flashlightBatteryLevel;
         data.storageLevel = submarineStats.storageLevel;
 
-        SaveSystem.SaveGame(data, slot);
+        SaveSystem.SaveGame(data, currentSaveSlot);
     }
 
     public void LoadGame(int slot)
