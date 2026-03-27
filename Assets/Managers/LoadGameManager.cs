@@ -28,7 +28,7 @@ public class LoadGameManager : MonoBehaviour
     public void OnBackButtonPressed()
     {
         PlayClickSound();
-        Debug.Log("Closing settings...");
+        Debug.Log("Closing...");
         
         // Save settings before closing
         PlayerPrefs.Save();

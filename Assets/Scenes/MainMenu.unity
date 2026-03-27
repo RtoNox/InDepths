@@ -1762,7 +1762,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clickSound: {fileID: 0}
   settingsCanvas: {fileID: 1906799}
-  mainMenuCanvas: {fileID: 1992266692}
+  MainMenuCanvas: {fileID: 1992266692}
+  SaveLoadCanvas: {fileID: 1227190413}
 --- !u!4 &766461354
 Transform:
   m_ObjectHideFlags: 0

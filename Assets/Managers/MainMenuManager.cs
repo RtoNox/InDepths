@@ -10,15 +10,16 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private GameObject settingsCanvas;
-    [SerializeField] private GameObject mainMenuCanvas;
+    [SerializeField] private GameObject MainMenuCanvas;
+    [SerializeField] private GameObject SaveLoadCanvas;
     void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1f;
         
-        if (mainMenuCanvas != null)
-            mainMenuCanvas.SetActive(true);
+        if (MainMenuCanvas != null)
+            MainMenuCanvas.SetActive(true);
         
         if (settingsCanvas != null)
             settingsCanvas.SetActive(false);
@@ -39,14 +40,12 @@ public class MainMenuManager : MonoBehaviour
     {
         PlayClickSound();
         Debug.Log("Opening save/load menu...");
-        // Testing to see if anything goes wrong when loading main scene 
-        SceneManager.LoadScene("MainScene");
 
-        if (mainMenuCanvas != null)
-            mainMenuCanvas.SetActive(false);
+        if (MainMenuCanvas != null)
+            MainMenuCanvas.SetActive(false);
         
         if (settingsCanvas != null)
-            settingsCanvas.SetActive(true);
+            SaveLoadCanvas.SetActive(true);
     }
     
     void OpenSettings()
@@ -55,8 +54,8 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Opening settings...");
         
         // Disable main menu, enable settings
-        if (mainMenuCanvas != null)
-            mainMenuCanvas.SetActive(false);
+        if (MainMenuCanvas != null)
+            MainMenuCanvas.SetActive(false);
         
         if (settingsCanvas != null)
             settingsCanvas.SetActive(true);
@@ -71,8 +70,8 @@ public class MainMenuManager : MonoBehaviour
         if (settingsCanvas != null)
             settingsCanvas.SetActive(false);
         
-        if (mainMenuCanvas != null)
-            mainMenuCanvas.SetActive(true);
+        if (MainMenuCanvas != null)
+            MainMenuCanvas.SetActive(true);
     }
     
     void ExitGame()
@@ -96,7 +95,7 @@ public class MainMenuManager : MonoBehaviour
     void Update()
     {
         // Only start game if main menu is active
-        if (mainMenuCanvas != null && mainMenuCanvas.activeInHierarchy)
+        if (MainMenuCanvas != null && MainMenuCanvas.activeInHierarchy)
         {
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
                 StartGame();
@@ -111,7 +110,7 @@ public class MainMenuManager : MonoBehaviour
                 CloseSettings();
             }
             // Otherwise, exit the game (only if main menu is active)
-            else if (mainMenuCanvas != null && mainMenuCanvas.activeInHierarchy)
+            else if (MainMenuCanvas != null && MainMenuCanvas.activeInHierarchy)
             {
                 ExitGame();
             }
