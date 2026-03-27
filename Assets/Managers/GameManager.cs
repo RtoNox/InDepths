@@ -255,7 +255,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GoToMainMenu()
+    public void LoadMainMenu()
     {
         Time.timeScale = 1f; // IMPORTANT reset
         isGameOver = false;

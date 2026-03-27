@@ -31,7 +31,7 @@ public class OxygenSystem : MonoBehaviour
         if (player.position.y < 0) // only drain oxygen underwater
             currentOxygen -= drainRate * Time.deltaTime;
 
-        float fill = (float)currentOxygen / maxOxygen;
+        float fill = currentOxygen / maxOxygen;
         oxygenBar.fillAmount = fill;
 
         if (currentOxygen <= 0)
