@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles") || !other.CompareTag("Player"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             Destroy(gameObject);
         }
