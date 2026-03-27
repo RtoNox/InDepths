@@ -41,7 +41,7 @@ public class PressureSystem : MonoBehaviour
         {
             float excessDepth = depth - safeDepth;
 
-            float pressureFill =  excessDepth / (safeDepth + 45f);
+            float pressureFill =  excessDepth / (safeDepth + 40f);
             pressureBar.fillAmount = pressureFill;
 
             // Faster damage tick rate the deeper you go

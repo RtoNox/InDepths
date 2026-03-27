@@ -4277,6 +4277,10 @@ PrefabInstance:
       propertyPath: filledColor.r
       value: 0.04705883
       objectReference: {fileID: 0}
+    - target: {fileID: -485873491006082142, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: minTickInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: -339442312562928432, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: player
       value: 
