@@ -768,7 +768,7 @@ MonoBehaviour:
   isGameOver: 0
   hasWon: 0
   isBossFightActive: 0
-  bossPrefab: {fileID: 0}
+  bossPrefab: {fileID: 7515490980195323951, guid: f1bd56a6c52536640b7504d124de399a, type: 3}
   isBossAlive: 0
   bossSpawnMin: {x: 0, y: 0}
   bossSpawnMax: {x: 0, y: 0}

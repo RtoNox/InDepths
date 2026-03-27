@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   currentHealth: 0
+  isBoss: 0
 --- !u!50 &3575450151550825391
 Rigidbody2D:
   serializedVersion: 4
