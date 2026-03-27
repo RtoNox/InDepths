@@ -778,6 +778,7 @@ MonoBehaviour:
   resultsPanel: {fileID: 1409570704}
   gameOverScreen: {fileID: 353193638}
   playerHUD: {fileID: 1302795345}
+  debtAmount: {fileID: 1566886674}
 --- !u!4 &25481004
 Transform:
   m_ObjectHideFlags: 0
@@ -7912,6 +7913,7 @@ MonoBehaviour:
   playerHUD: {fileID: 1302795345}
   retryButton: {fileID: 720285439}
   mainMenuButton: {fileID: 47742274}
+  debtAmount: {fileID: 1566886674}
 --- !u!114 &1314126119 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -4337932407001483990, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}

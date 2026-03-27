@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject playerHUD;
 
+    [Header("Debt UI")]
+    public TextMeshProUGUI debtAmount;
+
     void Awake()
     {
         if (Instance == null)
@@ -103,6 +106,7 @@ public class GameManager : MonoBehaviour
 
         SellItems();
         moneyEarned.text = "Money Earned: $" + moneyEarnedToday;
+        debtAmount.text = "DEBT\n$" + debt;
 
         SaveGame();
     }
@@ -120,8 +124,7 @@ public class GameManager : MonoBehaviour
 
         if (currentDay % 5 == 0)
         {
-            float previousDebt = debt;
-            debt = Mathf.RoundToInt(debt * 1.0001f);
+            debt += Mathf.RoundToInt(debt * 0.0001f);
         }
 
         // Reset daily tracker
@@ -265,6 +268,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; // IMPORTANT reset
         isGameOver = false;
 
+        SaveGame();
         SceneManager.LoadScene("MainMenu");
     }
 
