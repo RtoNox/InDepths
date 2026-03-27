@@ -10979,7 +10979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7383d6e5d97314e8f43dbb657cb210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 318353771}
+  player: {fileID: 4267086988838618773, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
   bossArenaY: 8000
 --- !u!4 &1875995198
 Transform:
