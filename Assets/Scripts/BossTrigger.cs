@@ -4,7 +4,7 @@ using UnityEngine;
 public class BossTrigger : MonoBehaviour
 {
     public Transform player;
-    public float bossArenaY = -8000f;
+    public float bossArenaY = 8000f;
 
     private void Start()
     {

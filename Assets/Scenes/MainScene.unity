@@ -739,6 +739,7 @@ GameObject:
   - component: {fileID: 25481006}
   - component: {fileID: 25481005}
   - component: {fileID: 25481007}
+  - component: {fileID: 25481008}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -853,6 +854,20 @@ MonoBehaviour:
   spawnInterval: 5
   maxCount: 15
   player: {fileID: 318353771}
+--- !u!114 &25481008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25481002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7383d6e5d97314e8f43dbb657cb210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 318353771}
+  bossArenaY: 8000
 --- !u!1 &39652716
 GameObject:
   m_ObjectHideFlags: 0
@@ -9876,52 +9891,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626556184}
   m_CullTransparentMesh: 1
---- !u!1 &1636067082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1636067084}
-  - component: {fileID: 1636067083}
-  m_Layer: 0
-  m_Name: BossTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1636067083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636067082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7383d6e5d97314e8f43dbb657cb210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 318353771}
-  bossArenaY: 8000
---- !u!4 &1636067084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636067082}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56931305, y: -0.5217863, z: 0.006291049}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636091044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,6 +10950,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849745333}
   m_CullTransparentMesh: 1
+--- !u!1 &1875995196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875995198}
+  - component: {fileID: 1875995197}
+  m_Layer: 0
+  m_Name: BossTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1875995197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875995196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7383d6e5d97314e8f43dbb657cb210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  bossArenaY: 8000
+--- !u!4 &1875995198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875995196}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3725996, y: 3.1496885, z: -0.06058456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876077331
 GameObject:
   m_ObjectHideFlags: 0
@@ -12435,5 +12450,5 @@ SceneRoots:
   - {fileID: 2079792691}
   - {fileID: 25481004}
   - {fileID: 1549822360}
-  - {fileID: 1636067084}
+  - {fileID: 1875995198}
   - {fileID: 882789907}
