@@ -121,6 +121,10 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.LoadGame(GameManager.Instance.currentSaveSlot);
         }
+        else
+        {
+            Debug.Log("No save slot found.");
+        }
     }
 
     void Update()

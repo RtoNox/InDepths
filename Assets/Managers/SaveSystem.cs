@@ -29,6 +29,22 @@ public static class SaveSystem
         return data;
     }
 
+    public static void DeleteSave(int slot)
+    {
+        string path = GetPath(slot);
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Save deleted: " + path);
+        }
+    }
+
+    public static bool SaveExists(int slot)
+    {
+        return File.Exists(GetPath(slot));
+    }
+
     static string GetPath(int slot)
     {
         return Application.persistentDataPath + "/save_" + slot + ".json";
