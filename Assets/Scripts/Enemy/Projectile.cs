@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Projectile hit: {other.gameObject.name} with tag: {other.tag}"); // Add this for debugging
-        
+
         if (other.CompareTag("Player"))
         {
             Health playerHealth = other.GetComponent<Health>();
@@ -73,5 +73,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else return; // Ignore other collisions
     }
 }
