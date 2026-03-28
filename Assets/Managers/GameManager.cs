@@ -1,5 +1,4 @@
 using JetBrains.Annotations;
-using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
@@ -56,6 +55,28 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private GameObject[] spawners;
+    void Start()
+    {
+        // Cache ALL spawners at the start (when they are still active)
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
     }
 
     public void Initialize(Inventory inv, PlayerCurrency curr, SubmarineStats stats)
@@ -160,26 +181,7 @@ public class GameManager : MonoBehaviour
         CheckWinCondition();
     }
 
-    // === SPAWNERS & DESPAWN SYSTEM ===
-
-    private List<GameObject> spawners = new List<GameObject>();
-    public void RegisterSpawner(GameObject spawner)
-    {
-        if (!spawners.Contains(spawner))
-        {
-            spawners.Add(spawner);
-            Debug.Log("Registered spawner: " + spawner.name);
-        }
-    }
-
-    public void UnregisterSpawner(GameObject spawner)
-    {
-        if (spawners.Contains(spawner))
-        {
-            spawners.Remove(spawner);
-            Debug.Log("Unregistered spawner: " + spawner.name);
-        }
-    }
+    // === DESPAWN SYSTEM ===
     public void DespawnAllEntities()
     {
         DespawnObject[] entities = FindObjectsOfType<DespawnObject>();
