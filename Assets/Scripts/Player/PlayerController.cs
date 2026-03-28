@@ -88,7 +88,12 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI torpedoText;
     public GameObject playerHUD;
     public ShopUIController shopUI;
-    
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip splashSound;
+    public AudioClip oceanAmbience;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -220,6 +225,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y >= -0.2f)
         {
+            AudioManager.Instance.StopAmbience();
             if (Input.GetKeyDown(KeyCode.F) && !shopUI.IsOpen())
             {
                 GameManager.Instance.EndDay();
@@ -227,6 +233,13 @@ public class PlayerController : MonoBehaviour
                 health.ResetHealth(); // Restore health when visiting shop
                 torpedoesRemaining = 10; // Resupply torpedoes when visiting shop
                 flashlightController.RefillBattery(); // Refill flashlight battery when visiting shop
+            }
+        }
+        else
+        {
+            if (!AudioManager.Instance.ambienceSource.isPlaying)
+            {
+                AudioManager.Instance.PlayAmbience(oceanAmbience);
             }
         }
 

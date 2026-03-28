@@ -28,7 +28,7 @@ public class OxygenSystem : MonoBehaviour
 
     void Update()
     {
-        if (player.position.y < -0.1f) // only drain oxygen underwater
+        if (player.position.y < -0.2f) // only drain oxygen underwater
             currentOxygen -= drainRate * Time.deltaTime;
 
         float fill = currentOxygen / maxOxygen;
@@ -45,7 +45,7 @@ public class OxygenSystem : MonoBehaviour
             }
         }
 
-        if (player.position.y >= -0.1f) // above water
+        if (player.position.y >= -0.2f) // above water
         {
             if (currentOxygen < maxOxygen)
             {

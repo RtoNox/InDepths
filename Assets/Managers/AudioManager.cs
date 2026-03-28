@@ -4,7 +4,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioSource musicSource;
+    public AudioSource ambienceSource;
     public AudioSource sfxSource;
 
     void Awake()
@@ -12,19 +12,23 @@ public class AudioManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
+    public void PlayAmbience(AudioClip clip)
     {
-        PlayMusic(musicSource.clip);
+        ambienceSource.clip = clip;
+        ambienceSource.loop = true;
+        ambienceSource.Play();
     }
 
-    public void PlayMusic(AudioClip clip)
+    public void StopAmbience()
     {
-        musicSource.clip = clip;
-        musicSource.Play();
+        ambienceSource.Stop();
     }
 
     public void PlaySFX(AudioClip clip)
     {
+        if (sfxSource.isPlaying)
+            sfxSource.Stop();
+
         sfxSource.PlayOneShot(clip);
     }
 }

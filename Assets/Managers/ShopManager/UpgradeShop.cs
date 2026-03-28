@@ -8,6 +8,10 @@ public class UpgradeShop : MonoBehaviour
     public SubmarineStats stats;
     public Health health;
 
+    [Header("Upgrade SFX")]
+    public AudioClip upgradeSound;
+    public AudioClip failedSound;
+
     [Header("Upgrade Data")]
     public List<StatUpgradeData> upgradeDataList;
 
@@ -68,6 +72,7 @@ public class UpgradeShop : MonoBehaviour
         if (currency.SpendMoney(cost))
         {
             stats.UpgradeStat(stat);
+            AudioManager.Instance.PlaySFX(upgradeSound);
             Debug.Log(stat + " upgraded! Cost: " + cost);
 
             if (stat == "vitality")
@@ -77,6 +82,7 @@ public class UpgradeShop : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlaySFX(failedSound);
             Debug.Log("Not enough money!");
         }
     }

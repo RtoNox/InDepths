@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
     [Header("Debt UI")]
     public TextMeshProUGUI debtAmount;
 
+    [Header("Audio")]
+    public AudioClip deathSound;
+
     void Awake()
     {
         if (Instance == null)
@@ -267,6 +270,9 @@ public class GameManager : MonoBehaviour
     // === PLAYER DEATH SYSTEM ===
     public void OnPlayerDeath()
     {
+        AudioManager.Instance.StopAmbience();
+        AudioManager.Instance.PlaySFX(deathSound);
+
         if (isBossFightActive)
         {
             TriggerBadEnding();
