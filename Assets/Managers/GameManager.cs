@@ -136,10 +136,24 @@ public class GameManager : MonoBehaviour
     // === PAY DEBT ===
     public void PayDebt(int amount)
     {
+        if (amount <= 0)
+        {
+            Debug.Log("Invalid amount!");
+            return;
+        }
+
+        amount = Mathf.Min(amount, debt); // prevent overpaying
+
         if (currency.money >= amount)
         {
             currency.SpendMoney(amount);
             debt -= amount;
+
+            Debug.Log("Paid: $" + amount + " Remaining debt: $" + debt);
+        }
+        else
+        {
+            Debug.Log("Not enough money!");
         }
 
         CheckWinCondition();
