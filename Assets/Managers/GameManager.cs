@@ -57,11 +57,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private GameObject[] spawners;
+    void Start()
+    {
+        // Cache ALL spawners at the start (when they are still active)
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+    }
+
     public void Initialize(Inventory inv, PlayerCurrency curr, SubmarineStats stats)
     {
         inventory = inv;
         currency = curr;
         submarineStats = stats;
+    }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
     }
 
     public void SellItems()
@@ -174,21 +195,21 @@ public class GameManager : MonoBehaviour
 
     public void EnableAllSpawners()
     {
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
         foreach (GameObject spawner in spawners)
         {
-            spawner.SetActive(true);
+            if (spawner != null)
+                spawner.SetActive(true);
         }
+
         Debug.Log("All spawners enabled.");
     }
 
     public void DisableAllSpawners()
     {
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
-
         foreach (GameObject spawner in spawners)
         {
-            spawner.SetActive(false);
+            if (spawner != null)
+                spawner.SetActive(false);
         }
 
         Debug.Log("All spawners disabled.");

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class FishSpawner : MonoBehaviour
@@ -21,7 +22,16 @@ public class FishSpawner : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
 
+        OnEnable();
+    }
+
+    void OnEnable()
+    {
         InvokeRepeating(nameof(Spawn), 1f, spawnInterval);
+    }
+    void OnDisable()
+    {
+        CancelInvoke(nameof(Spawn));
     }
 
     void Spawn()
