@@ -868,9 +868,6 @@ GameObject:
   m_Component:
   - component: {fileID: 25481004}
   - component: {fileID: 25481003}
-  - component: {fileID: 25481006}
-  - component: {fileID: 25481005}
-  - component: {fileID: 25481007}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -926,67 +923,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &25481005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25481002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b729bd3660e642b47abd13b43867f926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterPrefabs:
-  - {fileID: 5893338955390670106, guid: 2118cfcbc2d667e438471e1da8610311, type: 3}
-  - {fileID: 2509978915797621727, guid: c0eb9a89f99680846bef597a11d82914, type: 3}
-  - {fileID: 3361786672879311940, guid: 4e7df3a86ae40524fb9ec0f074878319, type: 3}
-  - {fileID: 1613522882649839802, guid: b7bfb241b01337645bfb704dae7f2d39, type: 3}
-  minBounds: 0
-  maxBounds: 9000
-  spawnInterval: 4
-  maxCount: 20
-  player: {fileID: 318353771}
---- !u!114 &25481006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25481002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47aefd896d2d6de47af4753dd5d1da89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefabs:
-  - {fileID: 2350881121176153453, guid: a3d1477907e10b84d8688455d2dfdbff, type: 3}
-  - {fileID: 2605133423495516040, guid: 6046a4c430e931247ab50d5432eb4af5, type: 3}
-  - {fileID: 5017187759749167951, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
-  minBounds: 0
-  maxBounds: 10
-  spawnInterval: 2
-  maxCount: 100
-  player: {fileID: 318353771}
---- !u!114 &25481007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25481002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 979fc54e7c0d3b841af4b3fc59ed8e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orePrefabs: []
-  minBounds: 0
-  maxBounds: 0
-  spawnInterval: 5
-  maxCount: 15
-  player: {fileID: 318353771}
 --- !u!1 &39652716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1245,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74572221}
   m_CullTransparentMesh: 1
+--- !u!1 &93920598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93920600}
+  - component: {fileID: 93920599}
+  m_Layer: 0
+  m_Name: FishSpawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &93920599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93920598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aefd896d2d6de47af4753dd5d1da89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefabs:
+  - {fileID: 2350881121176153453, guid: a3d1477907e10b84d8688455d2dfdbff, type: 3}
+  - {fileID: 2605133423495516040, guid: 6046a4c430e931247ab50d5432eb4af5, type: 3}
+  - {fileID: 4240905883948103419, guid: 8e52c399aabbf4045bb41bad56a556a2, type: 3}
+  minBounds: 10
+  maxBounds: 20
+  spawnInterval: 2
+  maxCount: 100
+  player: {fileID: 318353771}
+--- !u!4 &93920600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93920598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 963.21045, y: 612.10114, z: -4.2969613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120804650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,6 +2502,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338448450}
   m_CullTransparentMesh: 1
+--- !u!1 &346547243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346547245}
+  - component: {fileID: 346547244}
+  m_Layer: 0
+  m_Name: MonsterSpawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &346547244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346547243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b729bd3660e642b47abd13b43867f926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterPrefabs:
+  - {fileID: 5893338955390670106, guid: 2118cfcbc2d667e438471e1da8610311, type: 3}
+  - {fileID: 2509978915797621727, guid: c0eb9a89f99680846bef597a11d82914, type: 3}
+  - {fileID: 3361786672879311940, guid: 4e7df3a86ae40524fb9ec0f074878319, type: 3}
+  - {fileID: 1613522882649839802, guid: b7bfb241b01337645bfb704dae7f2d39, type: 3}
+  minBounds: 20
+  maxBounds: 40
+  spawnInterval: 4
+  maxCount: 20
+  player: {fileID: 318353771}
+--- !u!4 &346547245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346547243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 963.21045, y: 612.10114, z: -4.2969613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &353193638
 GameObject:
   m_ObjectHideFlags: 0
@@ -13613,10 +13656,12 @@ SceneRoots:
   - {fileID: 1327472428}
   - {fileID: 698212837}
   - {fileID: 1592901793}
+  - {fileID: 882789907}
   - {fileID: 1322727813}
   - {fileID: 597579281}
   - {fileID: 2079792691}
   - {fileID: 25481004}
   - {fileID: 1549822360}
   - {fileID: 1875995198}
-  - {fileID: 882789907}
+  - {fileID: 93920600}
+  - {fileID: 346547245}

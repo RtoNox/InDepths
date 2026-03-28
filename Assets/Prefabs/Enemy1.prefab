@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  despawnDistance: 40
+  despawnDistance: 200
   checkInterval: 1
 --- !u!114 &8136719537361362352
 MonoBehaviour:
