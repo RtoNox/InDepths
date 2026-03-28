@@ -12,8 +12,16 @@ public class LoadGameManager : MonoBehaviour
     [SerializeField] private Button backButton;
 
     [Header("Save Slots")]
-    [SerializeField] private Button[] slotButtons; // size = 3
-    [SerializeField] private TextMeshProUGUI[] slotTexts; // size = 3
+    [SerializeField] private Button[] slotButtons;
+    [SerializeField] private TextMeshProUGUI[] slotTexts;
+    [SerializeField] private GameObject[] deleteButtons; // assign per slot
+
+    [Header("Delete Confirmation UI")]
+    [SerializeField] private GameObject deleteConfirmPanel;
+    [SerializeField] private Button confirmYesButton;
+    [SerializeField] private Button confirmNoButton;
+
+    private int pendingDeleteSlot = -1;
 
     [Header("Audio Feedback")]
     [SerializeField] private AudioSource audioSource;
@@ -23,6 +31,12 @@ public class LoadGameManager : MonoBehaviour
     {
         if (backButton != null)
             backButton.onClick.AddListener(OnBackButtonPressed);
+
+        if (confirmYesButton != null)
+            confirmYesButton.onClick.AddListener(ConfirmDelete);
+
+        if (confirmNoButton != null)
+            confirmNoButton.onClick.AddListener(CancelDelete);
 
         SetupSlots();
     }
@@ -42,14 +56,25 @@ public class LoadGameManager : MonoBehaviour
                     "\nDay: " + data.currentDay +
                     "\nMoney: $" + data.money;
 
+                // SHOW delete button
+                deleteButtons[i].SetActive(true);
+
                 slotButtons[i].onClick.RemoveAllListeners();
                 slotButtons[i].onClick.AddListener(() => OnLoadGame(slotIndex));
+
+                // Hook delete button
+                int capturedIndex = i;
+                deleteButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
+                deleteButtons[i].GetComponent<Button>().onClick.AddListener(() => OnDeletePressed(capturedIndex));
             }
             else
             {
                 slotTexts[i].text =
                     "Slot " + (i + 1) +
                     "\n<Empty>";
+
+                // HIDE delete button
+                deleteButtons[i].SetActive(false);
 
                 slotButtons[i].onClick.RemoveAllListeners();
                 slotButtons[i].onClick.AddListener(() => OnNewGame(slotIndex));
@@ -63,10 +88,7 @@ public class LoadGameManager : MonoBehaviour
     {
         PlayClickSound();
 
-        Debug.Log("Starting new game in slot: " + slot);
-
         GameManager.Instance.currentSaveSlot = slot;
-
         GameManager.Instance.currentDay = 1;
         GameManager.Instance.debt = 10000000;
 
@@ -77,22 +99,43 @@ public class LoadGameManager : MonoBehaviour
     {
         PlayClickSound();
 
-        Debug.Log("Loading game from slot: " + slot);
-
         GameManager.Instance.currentSaveSlot = slot;
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 
-    public void DeleteSave(int slot)
+    // === DELETE FLOW ===
+
+    void OnDeletePressed(int slot)
     {
         PlayClickSound();
 
-        SaveSystem.DeleteSave(slot);
+        pendingDeleteSlot = slot;
+        deleteConfirmPanel.SetActive(true);
+    }
 
-        Debug.Log("Deleted save in slot: " + slot);
+    void ConfirmDelete()
+    {
+        PlayClickSound();
+
+        if (pendingDeleteSlot != -1)
+        {
+            SaveSystem.DeleteSave(pendingDeleteSlot);
+            Debug.Log("Deleted slot: " + pendingDeleteSlot);
+        }
+
+        pendingDeleteSlot = -1;
+        deleteConfirmPanel.SetActive(false);
 
         SetupSlots(); // refresh UI
+    }
+
+    void CancelDelete()
+    {
+        PlayClickSound();
+
+        pendingDeleteSlot = -1;
+        deleteConfirmPanel.SetActive(false);
     }
 
     // === BACK BUTTON ===
@@ -100,7 +143,6 @@ public class LoadGameManager : MonoBehaviour
     public void OnBackButtonPressed()
     {
         PlayClickSound();
-        Debug.Log("Closing...");
 
         PlayerPrefs.Save();
 
