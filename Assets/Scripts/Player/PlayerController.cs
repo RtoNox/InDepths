@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         );
 
         // Only load if slot exists
-        if (GameManager.Instance.currentSaveSlot != 0)
+        if (GameManager.Instance.currentSaveSlot != -1)
         {
             GameManager.Instance.LoadGame(GameManager.Instance.currentSaveSlot);
         }

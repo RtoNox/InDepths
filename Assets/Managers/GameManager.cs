@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Player Data")]
-    public int currentSaveSlot = 0;
+    public int currentSaveSlot = -1;
     public int currentDay = 1;
     public Inventory inventory;
     public PlayerCurrency currency;
@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
     // === SAVE/LOAD SYSTEM ===
     public void SaveGame()
     {
-        if (currentSaveSlot == 0)
+        if (currentSaveSlot == -1)
         {
             Debug.Log("No save slot selected!");
             return;
