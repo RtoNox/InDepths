@@ -21,17 +21,19 @@ public class MonsterSpawner : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
-
-        OnEnable();
     }
 
     void OnEnable()
     {
-        InvokeRepeating(nameof(Spawn), 2f, spawnInterval);
+        GameManager.Instance.RegisterSpawner(gameObject);
+        InvokeRepeating(nameof(Spawn), 1f, spawnInterval);
     }
     void OnDisable()
     {
         CancelInvoke(nameof(Spawn));
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.UnregisterSpawner(gameObject);
     }
 
     void Spawn()
