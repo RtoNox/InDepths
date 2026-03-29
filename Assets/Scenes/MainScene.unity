@@ -7275,7 +7275,7 @@ GameObject:
   - component: {fileID: 900686085}
   - component: {fileID: 900686080}
   m_Layer: 5
-  m_Name: EndingTransition
+  m_Name: SceneTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
