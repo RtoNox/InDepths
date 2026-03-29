@@ -16,7 +16,14 @@ public class ShopUIController : MonoBehaviour
     public float minX; // left limit
     public float maxX; // right limit
 
+    private SubmarineStats stats;
     public GameObject hintPanel;
+
+    void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        stats = player.GetComponent<SubmarineStats>();
+    }
 
     void Update()
     {
@@ -49,6 +56,11 @@ public class ShopUIController : MonoBehaviour
 
             shopPanel.anchoredPosition = pos;
         }
+
+        if (stats.vitalityLevel >= 75)
+        {
+            maxX = 900;
+        }
     }
     public void OpenShop()
     {
@@ -63,11 +75,6 @@ public class ShopUIController : MonoBehaviour
         PlayerHUD.SetActive(true);
         isOpen = false;
         GameManager.Instance.StartNewDay();
-    }
-
-    public void UnlockSecret()
-    {
-        maxX = 900;
     }
 
     public void ShowHint()

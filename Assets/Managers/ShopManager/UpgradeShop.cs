@@ -76,11 +76,6 @@ public class UpgradeShop : MonoBehaviour
             if (stat == "vitality")
             {
                 health.UpdateMaxHealth();
-                if (stats.vitalityLevel >= 75)
-                {
-                    shopUI.UnlockSecret();
-                    Debug.Log("Something has been unlocked in the shop.");
-                }
             }
         }
         else
