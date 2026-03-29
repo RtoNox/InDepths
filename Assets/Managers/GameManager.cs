@@ -276,7 +276,7 @@ public class GameManager : MonoBehaviour
     {
         if (isBossFightActive)
         {
-            TriggerBadEnding();
+            BadEnding();
             return;
         }
 
@@ -378,7 +378,7 @@ public class GameManager : MonoBehaviour
     }
 
     // === BAD ENDING TRIGGER ===
-    public void TriggerBadEnding()
+    public void BadEnding()
     {
         isGameOver = true;
 
