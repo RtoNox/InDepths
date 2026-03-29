@@ -379,6 +379,11 @@ public class GameManager : MonoBehaviour
         submarineStats.storageLevel = data.storageLevel;
     }
 
+    public void GameCompleted()
+    {
+        SaveSystem.DeleteSave(currentSaveSlot);
+    }
+
     // === WIN CONDITION ===
     void CheckWinCondition()
     {

@@ -42,6 +42,7 @@ public class EndingSceneController : MonoBehaviour
                 break;
         }
 
+        GameManager.Instance.GameCompleted();
         audioSource.Play();
     }
 
