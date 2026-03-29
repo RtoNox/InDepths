@@ -16,18 +16,33 @@ public class ShopUIController : MonoBehaviour
     public float minX; // left limit
     public float maxX; // right limit
 
+    public GameObject hintPanel;
+
     void Update()
     {
         if (!isOpen)
             return;
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
+        float horizontalInput = Input.GetAxis("Horizontal");
 
         if (scroll != 0)
         {
             Vector2 pos = shopPanel.anchoredPosition;
 
             pos.x -= scroll * scrollSpeed;
+
+            // Clamp so it doesn't go too far
+            pos.x = Mathf.Clamp(pos.x, minX, maxX);
+
+            shopPanel.anchoredPosition = pos;
+        }
+
+        if (horizontalInput != 0)
+        {
+            Vector2 pos = shopPanel.anchoredPosition;
+
+            pos.x -= horizontalInput * scrollSpeed * Time.deltaTime;
 
             // Clamp so it doesn't go too far
             pos.x = Mathf.Clamp(pos.x, minX, maxX);
@@ -48,6 +63,21 @@ public class ShopUIController : MonoBehaviour
         PlayerHUD.SetActive(true);
         isOpen = false;
         GameManager.Instance.StartNewDay();
+    }
+
+    public void UnlockSecret()
+    {
+        maxX = 900;
+    }
+
+    public void ShowHint()
+    {
+        hintPanel.SetActive(true);
+    }
+
+    public void CloseHint()
+    {
+        hintPanel.SetActive(false);
     }
 
     public bool IsOpen()

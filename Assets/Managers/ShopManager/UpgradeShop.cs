@@ -8,13 +8,10 @@ public class UpgradeShop : MonoBehaviour
     public SubmarineStats stats;
     public Health health;
 
-    [Header("Upgrade SFX")]
-    public AudioClip upgradeSound;
-    public AudioClip failedSound;
-
     [Header("Upgrade Data")]
     public List<StatUpgradeData> upgradeDataList;
 
+    private ShopUIController shopUI;
     private Dictionary<string, StatUpgradeData> upgradeDataDict;
 
     void Awake()
@@ -24,6 +21,7 @@ public class UpgradeShop : MonoBehaviour
         currency = player.GetComponent<PlayerCurrency>();
         stats = player.GetComponent<SubmarineStats>();
         health = player.GetComponent<Health>();
+        shopUI = GetComponent<ShopUIController>();
 
         upgradeDataDict = new Dictionary<string, StatUpgradeData>();
 
@@ -72,17 +70,22 @@ public class UpgradeShop : MonoBehaviour
         if (currency.SpendMoney(cost))
         {
             stats.UpgradeStat(stat);
-            AudioManager.Instance.PlaySFX(upgradeSound);
+            AudioManager.Instance.PlayUpgradeSFX();
             Debug.Log(stat + " upgraded! Cost: " + cost);
 
             if (stat == "vitality")
             {
                 health.UpdateMaxHealth();
+                if (stats.vitalityLevel >= 75)
+                {
+                    shopUI.UnlockSecret();
+                    Debug.Log("Something has been unlocked in the shop.");
+                }
             }
         }
         else
         {
-            AudioManager.Instance.PlaySFX(failedSound);
+            AudioManager.Instance.PlayFailedSFX();
             Debug.Log("Not enough money!");
         }
     }

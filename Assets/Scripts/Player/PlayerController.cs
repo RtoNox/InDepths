@@ -94,6 +94,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip splashSound;
     public AudioClip oceanAmbience;
 
+    private bool wasUnderwater = true;
+    private bool isUnderwater => Mathf.Abs(transform.position.y) > 0.2f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -223,7 +226,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (transform.position.y >= -0.2f)
+        if (Mathf.Abs(transform.position.y) <= 0.2f)
         {
             AudioManager.Instance.StopAmbience();
             if (Input.GetKeyDown(KeyCode.F) && !shopUI.IsOpen())
@@ -242,6 +245,24 @@ public class PlayerController : MonoBehaviour
                 AudioManager.Instance.PlayAmbience(oceanAmbience);
             }
         }
+
+        // Emerge SFX
+        if (wasUnderwater && !isUnderwater)
+        {
+            audioSource.volume = 1f;
+            audioSource.pitch = 1f;
+            audioSource.PlayOneShot(splashSound);
+        }
+        // Submerge SFX
+        if (!wasUnderwater && isUnderwater)
+        {
+            audioSource.volume = 0.6f;
+            audioSource.pitch = 0.8f;
+            audioSource.PlayOneShot(splashSound);
+        }
+
+        // Update state
+        wasUnderwater = isUnderwater;
 
         // Start charging Emergency Resurfacer
         if (Input.GetKeyDown(KeyCode.R) && !isChargingResurfacer && !isResurfacing)

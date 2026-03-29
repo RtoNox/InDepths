@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Obstacle
   - Spawner
   layers:
   - Default
@@ -14,7 +13,7 @@ TagManager:
   - Item
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 

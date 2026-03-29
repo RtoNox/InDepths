@@ -7,6 +7,10 @@ public class AudioManager : MonoBehaviour
     public AudioSource ambienceSource;
     public AudioSource sfxSource;
 
+    [Header("Upgrade SFX")]
+    public AudioClip upgradeSound;
+    public AudioClip failedSound;
+
     void Awake()
     {
         Instance = this;
@@ -30,5 +34,20 @@ public class AudioManager : MonoBehaviour
             sfxSource.Stop();
 
         sfxSource.PlayOneShot(clip);
+    }
+
+    public void PlayUpgradeSFX()
+    {
+        if (sfxSource.isPlaying)
+            sfxSource.Stop();
+
+        sfxSource.PlayOneShot(upgradeSound);
+    }
+    public void PlayFailedSFX()
+    {
+        if (sfxSource.isPlaying)
+            sfxSource.Stop();
+
+        sfxSource.PlayOneShot(failedSound);
     }
 }

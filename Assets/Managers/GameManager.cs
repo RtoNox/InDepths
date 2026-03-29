@@ -163,6 +163,7 @@ public class GameManager : MonoBehaviour
     {
         if (amount <= 0)
         {
+            AudioManager.Instance.PlayFailedSFX();
             Debug.Log("Invalid amount!");
             return;
         }
@@ -173,11 +174,14 @@ public class GameManager : MonoBehaviour
         {
             currency.SpendMoney(amount);
             debt -= amount;
+            debtAmount.text = "DEBT\n$" + debt;
 
+            AudioManager.Instance.PlayUpgradeSFX();
             Debug.Log("Paid: $" + amount + " Remaining debt: $" + debt);
         }
         else
         {
+            AudioManager.Instance.PlayFailedSFX();
             Debug.Log("Not enough money!");
         }
 
@@ -270,15 +274,14 @@ public class GameManager : MonoBehaviour
     // === PLAYER DEATH SYSTEM ===
     public void OnPlayerDeath()
     {
-        AudioManager.Instance.StopAmbience();
-        AudioManager.Instance.PlaySFX(deathSound);
-
         if (isBossFightActive)
         {
             TriggerBadEnding();
             return;
         }
 
+        AudioManager.Instance.StopAmbience();
+        AudioManager.Instance.PlaySFX(deathSound);
         inventory.ResetInventory();
 
         Debug.Log("Player died. Restarting day " + currentDay);

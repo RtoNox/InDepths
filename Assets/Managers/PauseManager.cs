@@ -51,6 +51,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f; // IMPORTANT reset
 
+        GameManager.Instance.SaveGame();
         SceneManager.LoadScene("MainMenu");
     }
 }

@@ -4,21 +4,22 @@ using TMPro;
 
 public class DebtPaymentUI : MonoBehaviour
 {
-    public GameObject panel;
+    public GameObject paymentPanel;
+    public GameObject statusPanel;
     public TMP_InputField inputField;
     public TextMeshProUGUI statusText;
 
     // Open UI
     public void OpenPanel()
     {
-        panel.SetActive(true);
+        paymentPanel.SetActive(true);
         inputField.text = "";
     }
 
     // Close UI
     public void ClosePanel()
     {
-        panel.SetActive(false);
+        paymentPanel.SetActive(false);
     }
 
     // Called when Confirm button is pressed
@@ -31,7 +32,18 @@ public class DebtPaymentUI : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlayFailedSFX();
             Debug.Log("Invalid input!");
         }
+    }
+
+    public void ShowStatus()
+    {
+        statusPanel.SetActive(true);
+    }
+
+    public void CloseStatus()
+    {
+        statusPanel.SetActive(false);
     }
 }
