@@ -6,9 +6,10 @@ using System.Collections;
 public class SceneFader : MonoBehaviour
 {
     public static SceneFader Instance;
+    public CanvasGroup canvasGroup;
 
-    public Image fadeImage;
     public float fadeDuration = 1f;
+    private bool isFading = false;
 
     void Awake()
     {
@@ -25,12 +26,17 @@ public class SceneFader : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
     }
 
     public void FadeToScene(string sceneName)
     {
-        gameObject.SetActive(true);
+        if (isFading) return;
+
+        isFading = true;
+        canvasGroup.blocksRaycasts = true; // block clicks during fade
+
         StartCoroutine(FadeAndLoad(sceneName));
     }
 
@@ -39,23 +45,21 @@ public class SceneFader : MonoBehaviour
         yield return StartCoroutine(Fade(1)); // fade to black
         SceneManager.LoadScene(sceneName);
         yield return StartCoroutine(Fade(0)); // fade back in
+        canvasGroup.blocksRaycasts = false; // allow clicks again
     }
 
     IEnumerator Fade(float targetAlpha)
     {
-        float startAlpha = fadeImage.color.a;
+        float startAlpha = canvasGroup.alpha;
         float time = 0f;
 
         while (time < fadeDuration)
         {
             time += Time.unscaledDeltaTime;
-            float alpha = Mathf.Lerp(startAlpha, targetAlpha, time / fadeDuration);
-
-            Color color = fadeImage.color;
-            color.a = alpha;
-            fadeImage.color = color;
-
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / fadeDuration);
             yield return null;
         }
+
+        canvasGroup.alpha = targetAlpha;
     }
 }

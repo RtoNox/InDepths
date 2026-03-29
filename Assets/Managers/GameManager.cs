@@ -391,7 +391,6 @@ public class GameManager : MonoBehaviour
         if (debt <= 0)
         {
             hasWon = true;
-            Debug.Log("You Win!");
             TrueEnding();
         }
     }

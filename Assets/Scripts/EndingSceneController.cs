@@ -1,14 +1,17 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndingSceneController : MonoBehaviour
 {
-    public TextMeshProUGUI titleText;
-    public TextMeshProUGUI descriptionText;
-    public AudioSource audioSource;
+    public GameObject worstEnding;
+    public GameObject badEnding;
+    public GameObject goodEnding;
+    public GameObject trueEnding;
 
+    public AudioSource audioSource;
+    public AudioClip worstClip;
     public AudioClip badClip;
-    public AudioClip neutralClip;
     public AudioClip goodClip;
     public AudioClip trueClip;
 
@@ -19,30 +22,31 @@ public class EndingSceneController : MonoBehaviour
         switch (ending)
         {
             case GameManager.EndingType.Worst:
-                titleText.text = "LOST TO THE DEPTHS";
-                descriptionText.text = "You went too far...";
-                audioSource.clip = badClip;
+                worstEnding.SetActive(true);
+                audioSource.clip = worstClip;
                 break;
 
             case GameManager.EndingType.Bad:
-                titleText.text = "SURVIVED... BARELY";
-                descriptionText.text = "But the debt remains.";
-                audioSource.clip = neutralClip;
+                badEnding.SetActive(true);
+                audioSource.clip = badClip;
                 break;
 
             case GameManager.EndingType.Good:
-                titleText.text = "DEBT CLEARED";
-                descriptionText.text = "You made it out alive.";
+                goodEnding.SetActive(true);
                 audioSource.clip = goodClip;
                 break;
 
             case GameManager.EndingType.True:
-                titleText.text = "TRUE FREEDOM";
-                descriptionText.text = "You conquered the depths.";
+                trueEnding.SetActive(true);
                 audioSource.clip = trueClip;
                 break;
         }
 
         audioSource.Play();
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
