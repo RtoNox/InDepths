@@ -8,6 +8,15 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public enum EndingType
+    {
+        Worst,
+        Bad,
+        Good,
+        True
+    }
+
+    public EndingType currentEnding;
 
     [Header("Player Data")]
     public int currentSaveSlot = -1;
@@ -26,7 +35,7 @@ public class GameManager : MonoBehaviour
     public bool isBossFightActive = false;
     public GameObject bossPrefab;
     private GameObject bossInstance;
-    public bool isBossAlive = false;
+    public bool bossBeaten = false;
 
     public Vector2 bossSpawnMin;
     public Vector2 bossSpawnMax;
@@ -251,14 +260,12 @@ public class GameManager : MonoBehaviour
 
         bossInstance = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
 
-        isBossAlive = true;
-
         Debug.Log("Boss spawned at: " + spawnPos);
     }
 
     public void OnBossDefeated()
     {
-        isBossAlive = false;
+        bossBeaten = true;
         isBossFightActive = false;
 
         Debug.Log("Boss defeated!");
@@ -268,6 +275,11 @@ public class GameManager : MonoBehaviour
 
     public void EndBossFight()
     {
+        if (bossBeaten && submarineStats.armStrengthLevel < 4)
+        {
+            BadEnding();
+            return;
+        }
         Debug.Log("Boss fight ended. Player can leave.");
     }
 
@@ -276,7 +288,7 @@ public class GameManager : MonoBehaviour
     {
         if (isBossFightActive)
         {
-            BadEnding();
+            WorstEnding();
             return;
         }
 
@@ -370,27 +382,42 @@ public class GameManager : MonoBehaviour
     // === WIN CONDITION ===
     void CheckWinCondition()
     {
+        if (bossBeaten)
+        {
+            GoodEnding();
+            return;
+        }
+
         if (debt <= 0)
         {
             hasWon = true;
             Debug.Log("You Win!");
+            TrueEnding();
         }
     }
 
     // === BAD ENDING TRIGGER ===
-    public void BadEnding()
+    public void WorstEnding()
     {
-        isGameOver = true;
-
-        Debug.Log("Bad Ending...");
+        currentEnding = EndingType.Worst;
+        SceneFader.Instance.FadeToScene("EndingScene");
     }
 
-    // === TRUE ENDING TRIGGER ===
+    public void BadEnding()
+    {
+        currentEnding = EndingType.Bad;
+        SceneFader.Instance.FadeToScene("EndingScene");
+    }
+
+    public void GoodEnding()
+    {
+        currentEnding = EndingType.Good;
+        SceneFader.Instance.FadeToScene("EndingScene");
+    }
+
     public void TrueEnding()
     {
-        debt = 0;
-        hasWon = true;
-
-        Debug.Log("True Ending Achieved!");
+        currentEnding = EndingType.True;
+        SceneFader.Instance.FadeToScene("EndingScene");
     }
 }

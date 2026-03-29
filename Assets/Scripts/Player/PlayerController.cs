@@ -345,7 +345,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.isBossFightActive && GameManager.Instance.isBossAlive)
+        if (GameManager.Instance.isBossFightActive)
         {
             if (Mathf.Abs(transform.position.y) >= bossArenaY)
             {
