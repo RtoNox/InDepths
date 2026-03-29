@@ -7272,6 +7272,7 @@ GameObject:
   - component: {fileID: 900686083}
   - component: {fileID: 900686082}
   - component: {fileID: 900686081}
+  - component: {fileID: 900686085}
   - component: {fileID: 900686080}
   m_Layer: 5
   m_Name: EndingTransition
@@ -7292,7 +7293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b312b7f84e875604cb177ddf3fbacd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeImage: {fileID: 972922163}
+  canvasGroup: {fileID: 900686085}
   fadeDuration: 1
 --- !u!114 &900686081
 MonoBehaviour:
@@ -7377,6 +7378,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &900686085
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900686079}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &914277339
 GameObject:
   m_ObjectHideFlags: 0
@@ -8250,7 +8263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
