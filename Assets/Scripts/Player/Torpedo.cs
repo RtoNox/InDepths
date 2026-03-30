@@ -8,9 +8,17 @@ public class Torpedo : MonoBehaviour
     private float lifetime;
     private Rigidbody2D rb;
 
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     public void Initialize(Vector2 shootDirection, float projectileSpeed, int damageAmount, float lifetimeDuration)
@@ -29,6 +37,7 @@ public class Torpedo : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        audioSource.PlayOneShot(shootSound);
         Destroy(gameObject, lifetime);
     }
 
@@ -67,6 +76,7 @@ public class Torpedo : MonoBehaviour
                     }
                 }
             }
+
             Destroy(gameObject);
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
