@@ -4842,8 +4842,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 977632597}
     - target: {fileID: 123608683345546725, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 123608683345546725, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 123608683345546725, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_GravityScale
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 123608683345546725, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745715474032857688, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: batteryBar
