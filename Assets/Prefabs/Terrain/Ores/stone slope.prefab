@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702799554588174755}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -57.23258, y: 30.928862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,7 +129,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5, y: 0.5}
+    - - {x: -0.50064695, y: -0.35855064}
+      - {x: -0.47374392, y: -0.31010318}
+      - {x: -0.4584902, y: -0.2525776}
+      - {x: -0.38882706, y: -0.19046307}
+      - {x: -0.38913333, y: 0.018324852}
+      - {x: -0.048938304, y: 0.30312636}
+      - {x: 0.3399276, y: 0.4281256}
+      - {x: 0.3990475, y: 0.5021354}
+      - {x: 0.5, y: 0.5}
       - {x: 0.5, y: -0.5}
       - {x: -0.5, y: -0.5}
   m_UseDelaunayMesh: 0
