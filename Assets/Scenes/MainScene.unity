@@ -8837,6 +8837,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1314126125}
     - target: {fileID: 7135872858943666850, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135872858943666850, guid: 79d7f9983633ef24b99b2d1370aa287d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2fe81e6a5770e234eb4f6470716a3a74, type: 2}
@@ -12844,7 +12848,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3e2acc759fbd31e45aa84ab91a361b28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18667,7 +18671,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 634500002dc4db34cbebd6b4450ff0f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
